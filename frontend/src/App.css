@@ -2,7 +2,7 @@
     text-align: center;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #add8e6, #fff);
+    background: linear-gradient(to bottom, #8cb1bf, #fff);
     background-attachment: fixed;
     min-height: 100vh;
   }
@@ -20,7 +20,7 @@
   }
   
   .App-header {
-    background-color: #282c34;
+    background-color: #1d2027;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -43,4 +43,80 @@
     }
   }
   
-  
+  .upcoming-events-box {
+    float: right;
+    background-color: #ffec8b; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    width: 300px; 
+    padding: 20px;
+    margin-top: 20px; 
+}
+
+
+.upcoming-events-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.upcoming-events-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.upcoming-events-list-item {
+    margin-bottom: 10px;
+}
+
+.add-event-button {
+    background-color: #b19cd9; 
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px; 
+}
+
+.hot-air-balloon {
+    text-align: center;
+    margin-top: 400px; 
+    float: right; 
+    margin-right: -300px; 
+}
+
+.hot-air-balloon img {
+    width: 140px;
+    height: 120px;
+}
+.home-container {
+  display: flex;
+}
+.upcoming-events {
+  width: 30%; 
+  margin-left: 100px; 
+}
+
+.app-container {
+  min-height: 100vh;
+  position: relative;
+ padding-bottom: 50px; 
+}
+footer {
+  margin-top: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #020202;
+  text-align: left;
+}
+.footer-content {
+  padding: 10px 0;
+}
+.image-container{
+  position: absolute;
+  bottom: 120px;
+  right: 20px;
+}

@@ -5,9 +5,13 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Header from "./components/Header";
 import './App.css';
+import "./Register.css";
+import "./Login.css";
+
+
 
 function App() {
-  return (
+ return (
     <div className="app">
       <BrowserRouter>
         <Header/>
@@ -17,14 +21,10 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/about" element={<About/>} />
         </Routes>
-      </BrowserRouter>
-    </div>
-  )
-}
       
-export default App;
+ </BrowserRouter>
+    </div>
+     )
+}
 
-
-
-
-
+export default App

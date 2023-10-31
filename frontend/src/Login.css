@@ -1,0 +1,134 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+  }
+  body {
+    background: linear-gradient(to top, #ffffff, #0074e4);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Asigură-te că fundalul se întinde pe întreaga înălțime a paginii */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .input-container {
+    margin-bottom: 10px; /* Spațiere între câmpurile de intrare */
+  }
+  
+  button {
+    margin-top: 10px; /* Spațiere între câmpurile de intrare și buton */
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .input-icon {
+    margin-right: 10px;
+  }
+  
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #545252; /* Sau oricare altă culoare gri dorită */
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .login {
+    background-color: #f0f0f0;}
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .input-icon {
+    margin-right: 10px;
+  }
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centrează orizontal */
+    align-items: center; /* Centrează vertical */
+    margin-top: 20px; /* Adaugă o distanță de 20px deasupra butonului (personalizabil) */
+  }
+  button {
+    background: #ffA500; /* Portocaliu pentru fundal */
+    border: none; /* Elimină orice contur al butonului */
+    border-radius: 10px; /* Rotunjește marginile butonului */
+    color: #fff; /* Culorea textului la alb */
+    padding: 10px 20px; /* Spațiere pentru buton */
+    cursor: pointer; /* Cursor de tip mână la survol */
+  }
+  
+  button:hover {
+    background: #ff8c00; /* Culoare portocalie mai închisă la survol */
+  }
+  .orange-icon {
+    color: #ffA500; /* Portocaliu pentru culoarea icoanei */
+  }
+   /* Stilizarea etichetelor */
+.input-label {
+    font-size: 18px;
+    border-radius: 10px;
+    background: #ffA500; /* Fundal portocaliu pentru etichete */
+    padding: 5px 10px;
+    color: #fff; /* Culoare text albă */
+    width: 180px; /* Lățimea etichetelor */
+    height: 30px; /* Înălțimea etichetelor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  /* Stilizarea câmpurilor de intrare */
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .input-icon {
+    font-size: 24px; /* Mărimea icoanelor */
+    margin-right: 10px; /* Spațiere între icoană și câmpul de intrare */
+  }
+  
+  .input {
+    width: 180px; /* Lățimea câmpurilor de intrare */
+    height: 30px; /* Înălțimea câmpurilor de intrare */
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+  
+  /* Stilizarea butonului "Log In" */
+  .centered-button {
+    background: #ffA500; /* Fundal portocaliu pentru buton */
+    border: none;
+    border-radius: 10px;
+    color: #fff; /* Culoare text albă */
+    width: 100px; /* Lățimea butonului */
+    height: 30px; /* Înălțimea butonului */
+    cursor: pointer;
+  }
+  
+  .centered-button:hover {
+    background: #ff8c00; /* Culoare portocalie mai închisă la survol */
+  }
