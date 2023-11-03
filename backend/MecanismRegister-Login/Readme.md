@@ -5,6 +5,7 @@ Pentru testare:
 REGISTER: http://localhost:8080/api/v1/auth/register
 LOGIN: http://localhost:8080/api/v1/auth/authenticate
 (astea le bagati in Postman)
+4. FOARTE IMPORTANT! In Postman, asigurati-va ca faceti un POST request la API
 
 mai multe informatii aveti aici:
 https://www.youtube.com/watch?v=KxqlJblhzfI (skip to: 1:59:00)
