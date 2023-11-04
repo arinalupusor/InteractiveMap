@@ -4,11 +4,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 @Entity
-public class Locuri {
+public class PinHarta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nume;
+    private Long id_Pin;
+    private String nume_Pin;
     private double latitudine;
     private double longitudine;
     private String descriere;
