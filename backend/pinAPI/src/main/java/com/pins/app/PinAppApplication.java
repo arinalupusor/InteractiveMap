@@ -1,11 +1,13 @@
-package com.crud.pins;
+package com.pins.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 @SpringBootApplication
-public class PinsApplication {
+public class PinAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PinsApplication.class, args);
+		SpringApplication.run(PinAppApplication.class, args);
 	}
+
 }

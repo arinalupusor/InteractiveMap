@@ -1,10 +1,10 @@
-package com.crud.pins;
+package com.pins.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PinsApplicationTests {
+class AppApplicationTests {
 
 	@Test
 	void contextLoads() {
