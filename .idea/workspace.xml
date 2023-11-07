@@ -4,14 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e49a2018-1a20-4f76-9031-af715a8e1e80" name="Changes" comment="fix" />
+    <list default="true" id="20a4d369-f3e0-4b14-9eb1-ede71425b1b5" name="Changes" comment="API Evenimente">
+      <change afterPath="$PROJECT_DIR$/.idea/InteractiveMap.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/java/com/oop/evenimenteapi/EvenimenteApiApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/java/com/oop/evenimenteapi/EventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/java/com/oop/evenimenteapi/EventInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/java/com/oop/evenimenteapi/EventRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/java/com/oop/evenimenteapi/EventService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/test/java/com/oop/evenimenteapi/EvenimenteApiApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend/EvenimenteAPI" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MateiMunteanu&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="559dc83d-dee1-4747-a7db-bf83d67690bb" />
+        <option name="url" value="https://github.com/arinalupusor/InteractiveMap.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -19,34 +62,22 @@
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2Xcc4IMmLMMR5gEhYgIjIhqYuEa" />
+  <component name="ProjectId" id="2XrH4KH2DB98Gz9xSM6MQsH0WSr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;BackendComun&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Stefan\Desktop\InteractiveMap\backend\pins\src\main\java\com\crud" />
-    </key>
-  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -54,7 +85,14 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.HelloworldApplication">
+  <component name="RunManager" selected="Spring Boot.EvenimenteApiApplication">
+    <configuration name="EvenimenteApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="EvenimenteAPI" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oop.evenimenteapi.EvenimenteApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HelloworldApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.helloworld.HelloworldApplication" />
@@ -73,58 +111,21 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e49a2018-1a20-4f76-9031-af715a8e1e80" name="Changes" comment="" />
-      <created>1698931617123</created>
+      <changelist id="20a4d369-f3e0-4b14-9eb1-ede71425b1b5" name="Changes" comment="" />
+      <created>1699380085805</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1698931617123</updated>
-      <workItem from="1698931619838" duration="802000" />
-      <workItem from="1698932484002" duration="894000" />
-      <workItem from="1699112546021" duration="968000" />
-      <workItem from="1699212793988" duration="382000" />
+      <updated>1699380085805</updated>
+      <workItem from="1699380086901" duration="133000" />
+      <workItem from="1699380261090" duration="166000" />
     </task>
-    <task id="LOCAL-00001" summary="Starter API de CRUD locuri interes">
-      <option name="closed" value="true" />
-      <created>1699112646559</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1699112646559</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Starter API de CRUD locuri interes">
-      <option name="closed" value="true" />
-      <created>1699112696729</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1699112696729</updated>
-    </task>
-    <task id="LOCAL-00003" summary="API CRUD for Pins">
-      <option name="closed" value="true" />
-      <created>1699212995952</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1699212995952</updated>
-    </task>
-    <task id="LOCAL-00004" summary="fix">
-      <option name="closed" value="true" />
-      <created>1699213110898</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1699213110898</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Starter API de CRUD locuri interes" />
-    <MESSAGE value="API CRUD for Pins" />
-    <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="API Evenimente" />
+    <option name="LAST_COMMIT_MESSAGE" value="API Evenimente" />
   </component>
 </project>
