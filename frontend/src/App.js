@@ -8,8 +8,6 @@ import './App.css';
 import "./Register.css";
 import "./Login.css";
 
-
-
 function App() {
  return (
     <div className="app">
@@ -27,4 +25,4 @@ function App() {
      )
 }
 
-export default App
+export default App;
