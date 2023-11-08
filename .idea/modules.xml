@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/InteractiveMap.iml" filepath="$PROJECT_DIR$/.idea/InteractiveMap.iml" />
-      <module fileurl="file://$PROJECT_DIR$/backend/MecanismRegister-Login/Test.iml" filepath="$PROJECT_DIR$/backend/MecanismRegister-Login/Test.iml" />
-    </modules>
-  </component>
-</project>
