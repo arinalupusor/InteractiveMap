@@ -1,5 +1,5 @@
 .header {
-    background: linear-gradient(to bottom, #add8e6, #fff); 
+    background: linear-gradient(to bottom, #add8e6, #fff);
     color: #333;
     padding: 10px;
     display: flex;
@@ -14,16 +14,16 @@
 
 .sun-icon {
     position: absolute;
-    left: 30px; 
-    top: 40%; 
-    transform: translateY(-50%); 
-    z-index: 0; 
-    width: 70px; 
+    left: 30px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 0;
+    width: 70px;
     height: 70px;
 }
 
 .sun-icon img {
-    width: 100%; 
+    width: 100%;
 }
 
 .header-title {
@@ -33,12 +33,12 @@
 }
 
 .stars-icon {
-    margin-left: 10px; 
+    margin-left: 10px;
 }
 
 .stars-icon img {
-    width: 64px; 
-    height: 64px; 
+    width: 64px;
+    height: 64px;
 }
 
 .cloud-icons {
@@ -47,27 +47,27 @@
 }
 
 .cloud-icon {
-    width: 36px; 
-    height: 36px; 
-    margin: 0 10px; 
+    width: 36px;
+    height: 36px;
+    margin: 0 10px;
 }
 
 .cloud-icon img {
-    width: 100%; 
+    width: 100%;
 }
 
 .cloud-left {
-    margin-top: -20px; 
+    margin-top: -20px;
 }
 
 .cloud-right {
-    margin-bottom: -23px; 
+    margin-bottom: -23px;
 }
 
 
 .search-bar-container {
     margin-left: 60px;
-    margin-top: 20px; 
+    margin-top: 20px;
     display: flex;
     align-items: center;
     position: relative;
@@ -81,17 +81,17 @@
 
 .search-bar input {
     border: none;
-    padding: 10px 75px; 
-    border-radius: 25px; 
-    flex: 1; 
+    padding: 10px 75px;
+    border-radius: 25px;
+    flex: 1;
 }
 
 .bird-icon {
     position: absolute;
-    top: -23px; 
-    right: 40px; 
-    width: 24px; 
-    height: 24px; 
+    top: -23px;
+    right: 40px;
+    width: 24px;
+    height: 24px;
 }
 
 
@@ -101,53 +101,56 @@
 }
 
 .user-icon {
-    width: 36px; 
-    height: 36px; 
-    margin-right: 0px; 
+    width: 36px;
+    height: 36px;
+    margin-right: -5px;
+    width: 36px;
+    height: 36px;
+    margin-right: 0px;
     margin-bottom: -7px;
 }
 
 .header-button {
-    background-color: #add8e6; 
+    background-color: #add8e6;
     color: #333;
     border: none;
     padding: 10px 20px;
-    font-size: 16px; 
-    font-weight: bold; 
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    border-radius: 20px; 
+    border-radius: 20px;
     margin-right: 5px;
     display: flex;
     align-items: center;
 }
 
 .header-button.signup {
-    background-color: #ffec8b; 
-    margin-left: 5px; 
-    
+    background-color: #ffec8b;
+    margin-left: 5px;
+
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #ffec8b; 
-    width: 220px; 
+    background-color: #ffec8b;
+    width: 220px;
     z-index: 1;
-    border-radius: 20px; 
+    border-radius: 20px;
 }
 
 .dropdown-content a {
-    color: #333; 
+    color: #333;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    background-color: #FFC28D; 
-    border-radius: 20px; 
-    font-weight: bold; 
+    background-color: #FFC28D;
+    border-radius: 20px;
+    font-weight: bold;
 }
 
 .dropdown-content a:hover {
-    background-color: #e6e6e6; 
+    background-color: #e6e6e6;
 }
 
 .dropdown:hover .dropdown-content {
