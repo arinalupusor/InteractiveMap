@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="4" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20a4d369-f3e0-4b14-9eb1-ede71425b1b5" name="Changes" comment="API Evenimente">
-      <change afterPath="$PROJECT_DIR$/.idea/InteractiveMap.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/java/com/oop/evenimenteapi/EvenimenteApiApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/java/com/oop/evenimenteapi/EventController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/java/com/oop/evenimenteapi/EventInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/java/com/oop/evenimenteapi/EventRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/java/com/oop/evenimenteapi/EventService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/EvenimenteAPI/src/test/java/com/oop/evenimenteapi/EvenimenteApiApplicationTests.java" afterDir="false" />
+    <list default="true" id="20a4d369-f3e0-4b14-9eb1-ede71425b1b5" name="Changes" comment="Integration Commit">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/InteractiveMap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/InteractiveMap.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +29,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend/EvenimenteAPI" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -51,7 +41,7 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="559dc83d-dee1-4747-a7db-bf83d67690bb" />
+        <option name="accountId" value="9c94a00f-bff9-40e9-8806-eb3ea6e5cbc8" />
         <option name="url" value="https://github.com/arinalupusor/InteractiveMap.git" />
       </UrlAndAccount>
     </option>
@@ -63,21 +53,30 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2XrH4KH2DB98Gz9xSM6MQsH0WSr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -85,7 +84,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EvenimenteApiApplication">
+  <component name="RunManager">
     <configuration name="EvenimenteApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="EvenimenteAPI" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.oop.evenimenteapi.EvenimenteApiApplication" />
@@ -126,6 +125,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="API Evenimente" />
-    <option name="LAST_COMMIT_MESSAGE" value="API Evenimente" />
+    <MESSAGE value="Integration Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integration Commit" />
   </component>
 </project>
