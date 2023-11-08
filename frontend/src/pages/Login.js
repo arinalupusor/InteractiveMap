@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { TiUser, TiMail,  TiKey } from 'react-icons/ti';
 import axios from 'axios';
 import config from "../config.json";
+import {useNavigate} from "react-router-dom";
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorText, setErrorText] = useState('');
+    let navigate = useNavigate();
     const handleLogin = () =>
     {
         if(email.length < 5 || password.length < 1)
@@ -23,6 +25,7 @@ function Login() {
                 // Handle successful login
                 console.log(response.data);
                 localStorage.setItem('token', response.data.token);
+                navigate("/");
             })
             .catch(error => {
                 // Handle error
