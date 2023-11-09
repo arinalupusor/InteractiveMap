@@ -6,24 +6,24 @@
     background-attachment: fixed;
     min-height: 100vh;
   }
-  
-  
+
+
   .App-logo {
     height: 40vmin;
     pointer-events: none;
   }
-  
+
   @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
     }
   }
-  
-  
+
+
   .App-link {
     color: #add8e6;
   }
-  
+
   @keyframes App-logo-spin {
     from {
       transform: rotate(0deg);
@@ -32,15 +32,15 @@
       transform: rotate(360deg);
     }
   }
-  
+
   .upcoming-events-box {
     float: right;
-    background-color: #ffec8b; 
-    border: 1px solid #ddd; 
-    border-radius: 10px; 
-    width: 300px; 
+    background-color: #ffec8b;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 300px;
     padding: 20px;
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
 
@@ -60,21 +60,21 @@
 }
 
 .add-event-button {
-    background-color: #b19cd9; 
-    color: #fff; 
+    background-color: #b19cd9;
+    color: #fff;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 20px; 
+    border-radius: 20px;
 }
 
 .hot-air-balloon {
     text-align: center;
-    margin-top: 400px; 
-    float: right; 
-    margin-right: -300px; 
+    margin-top: 400px;
+    float: right;
+    margin-right: -300px;
 }
 
 .hot-air-balloon img {
@@ -83,7 +83,7 @@
 }
 .home-container {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 20px;
 }
 .map-container {
@@ -92,8 +92,8 @@
 }
 
 .upcoming-events {
-  width: 50%; 
-  margin-left: 100px; 
+  width: 50%;
+  margin-left: 100px;
   flex: 1;
   padding: 20px;
 }
@@ -101,7 +101,7 @@
 .app-container {
   min-height: 100vh;
   position: relative;
- padding-bottom: 50px; 
+ padding-bottom: 50px;
 }
 footer {
   margin-top: 20px;

@@ -1,13 +1,40 @@
 import React, { useState } from 'react';
-import { TiUser, TiMail,  TiKey } from 'react-icons/ti'; 
+import { TiUser, TiMail,  TiKey } from 'react-icons/ti';
+import config from "../config.json"
 
 function Register() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleRegister = () => {
-        
+    const handleRegister = async () => {
+        const registrationData = {
+            firstname: name,
+            lastname: '', // completați corespunzător
+            email,
+            password,
+        };
+        console.log(registrationData)
+
+        try {
+            const response = await fetch(config.url + '/api/v1/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(registrationData),
+            });
+            console.log(response)
+            if (response.ok) {
+                // Înregistrare reușită
+                console.log('Înregistrare reușită');
+            } else {
+                // Înregistrare eșuată
+                console.error('Înregistrare eșuată');
+            }
+        } catch (error) {
+            console.error('Eroare de rețea:', error);
+        }
     };
 
     return (
