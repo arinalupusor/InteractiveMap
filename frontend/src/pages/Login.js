@@ -37,36 +37,58 @@ function Login() {
 
 
     return (
-        <div className="login">
-            <h2><TiUser className="input-icon" style={{ width: '180px', height: '70px' }} /></h2>
-            <div className="input-container">
+        <div className="main-container">
+
+            <div className="imagini-icons">
+                <div className="icon-userP">
+                <img className="UserIcon" src="https://img.icons8.com/pulsar-color/48/user.png" alt="User icon"></img>
+                 </div>
+
+                <div className="icon-cuibP">
+                <img className="CuibPasari" src="https://img.icons8.com/external-justicon-flat-justicon/64/external-bird-spring-season-justicon-flat-justicon-1.png" alt="Cuib pasari"></img>
+                </div>
+                
+               
             </div>
-<div className="input-container">
-    <TiMail className="input-icon" />
-    <input
-        className="input"
-        type="email"
-        placeholder="E-mail"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        />
-    </div>
-    <div className="input-container">
-        <TiKey className="input-icon" />
-        <input
-            className="input"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-        />
-    </div>
-    <div className="button-container">
-        <button onClick={handleLogin} className="centered-button">LOG IN</button>
-    </div>
-    </div>
+
+               
+
+            <div className="login">
+
+                  <div className="input-container1">
+                  <TiMail className="input-icon1" />
+                      
+                      <input className="input1"
+                       type="email"
+                       placeholder="E-mail"
+                       value={email}
+                       onChange={(e) => setEmail(e.target.value)}
+                        />
+                        
+                    
+                    </div>
+
+
+                  <div className="input-container2">
+                      <TiKey className="input-icon2" />
+                       <input className="input2"
+                        type="password"
+                       placeholder="Password"
+                       value={password}
+                       onChange={(e) => setPassword(e.target.value)}
+                       />
+                 </div>
+
+
+                <div className="button-container"> 
+                    <button onClick={handleLogin} className="centered-button">LOG IN</button>
+               </div>
+
+           </div>
+
+         </div>
     
-        );
+          );
     }
     
     

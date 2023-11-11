@@ -6,7 +6,6 @@ import Register from "./pages/Register";
 import './App.css';
 import "./Register.css";
 import "./Login.css";
-import Header from "./components/Header"; 
 
 function App() {
   
@@ -14,7 +13,6 @@ function App() {
  return (
     <div className="app">
       <BrowserRouter>
-      <Header/>
         <Routes>
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
@@ -23,8 +21,7 @@ function App() {
         
 
         </Routes>
-        {window.location.pathname==='/'&& <Header />}
-      
+        
       
       </BrowserRouter>
  
