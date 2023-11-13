@@ -1,5 +1,6 @@
 import React from "react";
 import "../Pinn.css";
+import Header from "../components/Header";
 
 import LeafletMap from "../components/LeafletMap";
 function MapContainer() {
@@ -38,6 +39,7 @@ const Home = () => {
  
   return (
     <div className="home-container">
+      <Header />
       <MapContainer />
       <UpcomingEvents upcomingEvents={upcomingEvents} />
     </div>
