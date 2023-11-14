@@ -1,14 +1,20 @@
 import React from 'react';
-
+import { useLocation } from 'react-router-dom';
 const Footer = () => {
+    const location = useLocation();
+    const shouldDisplayFooter = location.pathname === '/Home';
+    if (!shouldDisplayFooter) {
+        return null; 
+    }
+
     return (
         <footer>
             <div className="map-section">
             </div>
             <hr />
             <section>
-                <div>
-                    <h3 className="contact">  Do you need help? </h3>
+                <div className='Contact'>
+                    <h3 >  Do you need help? </h3>
                     Contact 📞<a href="tel:+123-456-7890">+123-456-7890</a>
                 </div>
             </section>

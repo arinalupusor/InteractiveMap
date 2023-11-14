@@ -1,21 +1,26 @@
 .Footer{
-    body{
-        margin: 0; 
-                display: flex;
-                min-height: 100vh; 
-                flex-direction:column-reverse;
-     }
+    body {
+        margin: 0;
+        padding: 0;
+      position: relative;
+      min-height: 100vh;
+      }
+      main{
+        margin-bottom: 50px;
+      }
+      
      .content{
         flex: 1;
      }
      footer{
-        background-color: #f0f0f0;
-                padding: 10px;
-                width: 200px; 
-                position: left; 
-                bottom: 0; 
-                left: 0; 
-     }
+        background-color: rgb(80, 187, 233);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%; 
+        padding: 10px;
+        text-align: center;
+      }
         hr{
             border: none;
             border-top: 1px solid #ccc;
@@ -36,13 +41,15 @@
        margin-bottom: 10px;
        }
         .privacy-link{
+            background-color: #88b6e8;
             color: #007BFF; 
       text-decoration: none; 
       font-weight: bold;
         }
         .terms-link{
+            background-color: #97bce462;
             color: #007bff62; 
       text-decoration: none; 
       font-weight: bold;
         }
-}
+    }

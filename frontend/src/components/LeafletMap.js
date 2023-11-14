@@ -2,14 +2,19 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import "leaflet-defaulticon-compatibility";
-import L from "leaflet";
+import L, { divIcon } from "leaflet";
+import { Link , useNavigate} from 'react-router-dom';
 import image1 from "../images/image1.png";
 import image2 from "../images/image2.png";
 import image3 from "../images/image3.png";
+import StaticPage from "../pages/StaticPage";
+
 const LeafletMap = () => {
+    const navigate = useNavigate ();
     const handleMarkerClick = (message) => {
         window.alert(message);
-        console.log("You clicked")
+        console.log("You clicked");
+        navigate('/static-page');
     };
     const pins = [
         {
@@ -23,6 +28,7 @@ const LeafletMap = () => {
             message: 'You clicked on purple pin',
         },
         {
+            
             id: 'red-pin',
             icon: L.icon({
                 iconUrl: image2,
@@ -30,8 +36,11 @@ const LeafletMap = () => {
                 iconAnchor: [16, 32],
             }),
             position: [47.16170746357623, 27.612238821160567],
-            message: 'You clicked on red pin',
+            message:"OzPlay"
         },
+        
+        
+            
         {
             id: 'green-pin',
             icon: L.icon({
@@ -72,4 +81,3 @@ const LeafletMap = () => {
     );
 }
 export default LeafletMap;
-
