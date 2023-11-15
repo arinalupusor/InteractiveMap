@@ -1,1 +1,1 @@
-Dupa ce se testeaza functionalitatea APIului o sa l cuplez la root
+Dupa ce se testeaza functionalitatea APIului SEARCHBAR o sa l cuplez la root
