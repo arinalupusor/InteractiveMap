@@ -1,7 +1,8 @@
 import React from "react";
 import "../Pinn.css";
-
+import Authcontext from "../components/AuthContext";
 import LeafletMap from "../components/LeafletMap";
+import {useContext} from "react";
 function MapContainer() {
 
   return (
@@ -28,20 +29,21 @@ const UpcomingEvents = ({ upcomingEvents }) => (
 
 
 const Home = () => {
-  const upcomingEvents = [
+    const {isAuthenticated, accountType, email, token} = useContext(Authcontext);
+    const upcomingEvents = [
     "Event 1",
     "Event 2",
     "Event 3",
     "Event 4",
     "Event 5",
-  ];
+    ];
  
-  return (
-    <div className="home-container">
-      <MapContainer />
-      <UpcomingEvents upcomingEvents={upcomingEvents} />
-    </div>
-  );
+    return (
+        <div className="home-container">
+            <MapContainer />
+            <UpcomingEvents upcomingEvents={upcomingEvents} />
+        </div>
+    );
 };
  
 export default Home;

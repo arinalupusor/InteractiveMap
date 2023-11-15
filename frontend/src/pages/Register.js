@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { TiUser, TiMail,  TiKey } from 'react-icons/ti';
 import config from "../config.json"
+import {useNavigate} from "react-router-dom";
 
 function Register() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    let navigate = useNavigate();
 
     const handleRegister = async () => {
         const registrationData = {
@@ -28,6 +30,7 @@ function Register() {
             if (response.ok) {
                 // Înregistrare reușită
                 console.log('Înregistrare reușită');
+                navigate("/login");
             } else {
                 // Înregistrare eșuată
                 console.error('Înregistrare eșuată');

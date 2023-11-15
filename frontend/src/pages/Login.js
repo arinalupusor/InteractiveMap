@@ -1,30 +1,37 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import { TiUser, TiMail,  TiKey } from 'react-icons/ti';
 import axios from 'axios';
 import config from "../config.json";
 import {useNavigate} from "react-router-dom";
+import Authcontext from "../components/AuthContext";
 
 function Login() {
-    const [email, setEmail] = useState('');
+    const [loginEmail, setLoginEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorText, setErrorText] = useState('');
     let navigate = useNavigate();
+    const {setIsAuthenticated,  setAccountType, setEmail} = useContext(Authcontext);
     const handleLogin = () =>
     {
-        if(email.length < 5 || password.length < 1)
+        if(loginEmail.length < 5 || password.length < 1)
         {
             setErrorText("Email or password are missing or are too short")
             return
         }
 
         axios.post(config.url + '/api/v1/auth/authenticate', {
-            email: email,
+            email: loginEmail,
             password: password
         })
             .then(response => {
                 // Handle successful login
                 console.log(response.data);
+                localStorage.setItem('email', response.data.email);
                 localStorage.setItem('token', response.data.token);
+                localStorage.setItem('accountType', response.data.type);
+                setIsAuthenticated(true);
+                setAccountType(response.data.type);
+                setEmail(response.data.email);
                 navigate("/");
             })
             .catch(error => {
@@ -47,8 +54,8 @@ function Login() {
         className="input"
         type="email"
         placeholder="E-mail"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={loginEmail}
+        onChange={(e) => setLoginEmail(e.target.value)}
         />
     </div>
     <div className="input-container">
