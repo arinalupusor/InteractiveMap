@@ -7,22 +7,28 @@ import Header from "./components/Header";
 import './App.css';
 import "./Register.css";
 import "./Login.css";
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './path-to-reducer/reducer';
+import myMiddleware from './path-to-middleware/middleware';
 
 function App() {
- return (
+  return (
     <div className="app">
-      <BrowserRouter>
-        <Header/>
-        <Routes>
-          <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<Register/>} />
-          <Route path="/" element={<Home/>} />
-          <Route path="/about" element={<About/>} />
-        </Routes>
-      
- </BrowserRouter>
+      <Provider store={store}>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Router>
+      </Provider>
     </div>
-     )
+  );
 }
+
 
 export default App;
