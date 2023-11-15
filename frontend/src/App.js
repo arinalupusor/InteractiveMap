@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import LeafletMap from './components/LeafletMap';
-import StaticPage from './pages/StaticPage';
+import PinPage from './pages/PinPage';
 import About from './pages/About';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -21,7 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/about" element={<About />} />
-          <Route path="/static-page" element={<StaticPage />} />
+          <Route path="/pinPage" element={<PinPage />} />
           <Route path="/" element={<Home />} />
           <Route path="/map" element={<LeafletMap />} /> {/* Noua rută pentru LeafletMap */}
         </Routes>

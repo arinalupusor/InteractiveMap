@@ -7,14 +7,12 @@ import { Link , useNavigate} from 'react-router-dom';
 import image1 from "../images/image1.png";
 import image2 from "../images/image2.png";
 import image3 from "../images/image3.png";
-import StaticPage from "../pages/StaticPage";
 
 const LeafletMap = () => {
     const navigate = useNavigate ();
     const handleMarkerClick = (message) => {
-        window.alert(message);
         console.log("You clicked");
-        navigate('/static-page');
+        navigate('/pinPage');
     };
     const pins = [
         {

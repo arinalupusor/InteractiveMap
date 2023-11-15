@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
-const StaticPage = ({ onBackButtonClick }) => {
+import './PinPage.css';
+const PinPage = (onBackButtonClick) => {
   return (
     <div>
       <h1><center>oZplay</center></h1>
@@ -80,4 +81,4 @@ const ReviewList = () => {
 );
 };
   
-export default StaticPage;
+export default PinPage;
