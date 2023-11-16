@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import './Header.css';
+import Authcontext from "./AuthContext";
+import {useNavigate} from "react-router-dom";
 
 const Header = () => {
     const [guestDropdown, setGuestDropdown] = useState(false);
     const [signUpDropdown, setSignUpDropdown] = useState(false);
+    const {isAuthenticated, setIsAuthenticated, accountType} = useContext(Authcontext);
+    let navigate = useNavigate();
 
     const toggleGuestDropdown = () => {
         setGuestDropdown(!guestDropdown);
@@ -13,6 +17,14 @@ const Header = () => {
     const toggleSignUpDropdown = () => {
         setSignUpDropdown(!signUpDropdown);
         setGuestDropdown(false);
+        if(isAuthenticated)
+        {
+            localStorage.removeItem("email");
+            localStorage.removeItem("token");
+            localStorage.removeItem("accountType");
+            setIsAuthenticated(false);
+            navigate("/login")
+        }
     };
 
     return (
@@ -43,17 +55,17 @@ const Header = () => {
             <div className="header-buttons">
                 <img className="user-icon" src="https://img.icons8.com/pulsar-color/48/user.png" alt="user" />
                 <div className="dropdown">
-                     <button
+                    <button
                         className={`header-button ${guestDropdown ? 'active' : ''}`}
                         onClick={toggleGuestDropdown}
                     >
-                        Guest
+                        {isAuthenticated ? accountType : "Guest"}
                     </button>
                     {guestDropdown && (
                         <div className="dropdown-content">
-                            <a href="login">Log in as user</a>
-                            <a href="login">Log in as event owner</a>
-                            <a href="login">Log in as admin</a>
+                            <a href="/login">Log in as user</a>
+                            <a href="/login">Log in as event owner</a>
+                            <a href="/login">Log in as admin</a>
                         </div>
                     )}
                 </div>
@@ -61,13 +73,12 @@ const Header = () => {
                     <button
                         className={`header-button signup ${signUpDropdown ? 'active' : ''}`}
                         onClick={toggleSignUpDropdown}
-                    >
-                        Sign up
+                    >{!isAuthenticated ? "Sign up" : "Logout" }
                     </button>
-                    {signUpDropdown && (
+                    {!isAuthenticated && signUpDropdown && (
                         <div className="dropdown-content">
-                            <a href="register">Sign up as user</a>
-                            <a href="register">Sign up as event owner</a>
+                            <a href="/register">Sign up as user</a>
+                            <a href="/register">Sign up as event owner</a>
                         </div>
                     )}
                 </div>
