@@ -51,9 +51,9 @@ const Header = () => {
                     </button>
                     {guestDropdown && (
                         <div className="dropdown-content">
-                            <a href="#">Log in as user</a>
-                            <a href="#">Log in as event owner</a>
-                            <a href="#">Log in as admin</a>
+                            <a href="login">Log in as user</a>
+                            <a href="login">Log in as event owner</a>
+                            <a href="login">Log in as admin</a>
                         </div>
                     )}
                 </div>
@@ -66,8 +66,8 @@ const Header = () => {
                     </button>
                     {signUpDropdown && (
                         <div className="dropdown-content">
-                            <a href="#">Sign up as user</a>
-                            <a href="#">Sign up as event owner</a>
+                            <a href="register">Sign up as user</a>
+                            <a href="register">Sign up as event owner</a>
                         </div>
                     )}
                 </div>
