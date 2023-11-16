@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Pinn.css";
 import Header from "../components/Header";
 
@@ -11,30 +11,48 @@ function MapContainer() {
     </div>
   );
 }
- 
-const UpcomingEvents = ({ upcomingEvents }) => (
-  <div className="upcoming-events">
-    <div className="events-box">
+
+
+const UpcomingEvents= ({upcomingEvents}) => {
+  const [selectedEvent, setSelectedEvent]=useState(null);
+
+  const handleEventClick=(event)=> {
+    setSelectedEvent(event);
+    //aici puteti adauga orice actiune suplimentara dorita in momentul apasarii unui eveniment
+    console.log('event clicked: ${event}');
+  };
+
+  return(
+    <div className="upcoming-events">
+      <div className="events-box">
       <h2>Upcoming Events</h2>
-      <div className="button-image-container">
-      </div>
+      <div className="button-image-container"></div>
       <ul>
-        {upcomingEvents.map((event, index) => (
-          <li key={index}>{event}</li>
-        ))}
-      </ul>
-    </div>
-  </div>
-);
+      {upcomingEvents.map((event, index) => (
+        <li key={index} onclick={() =>handleEventClick(event)}>
+          {event}
+        </li>
+         ))}
+         </ul>
+         </div>
+         {selectedEvent &&(
+          <div>
+            {/*Aici pueti afisa informatii suplimentare despre evenimentul selectat*/}
+            <p>Selected Event: {selectedEvent} </p>
+            </div>
+         )}
+         </div>
+         )
+        }
+ 
 
 
 const Home = () => {
   const upcomingEvents = [
     "Event 1",
     "Event 2",
-    "Event 3",
-    "Event 4",
-    "Event 5",
+    "Halloween Party",
+    
   ];
  
   return (
@@ -49,3 +67,4 @@ const Home = () => {
 export default Home;
   
 
+ 

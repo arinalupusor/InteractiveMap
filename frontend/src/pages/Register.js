@@ -38,38 +38,52 @@ function Register() {
     };
 
     return (
-        <div className="register">
-            <h2><TiUser className="input-icon" style={{ width: '180px', height: '70px' }} /></h2>
-            <div className="input-container">
-                <TiUser className="input-icon" />
-                <input
-                    type="text"
-                    placeholder="Name.."
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
+        <div className="main-container">
+
+            <div className="imagine-iconP">
+            <img className="UserIcon" src="https://img.icons8.com/pulsar-color/48/user.png" alt="User icon"></img>
+
             </div>
-            <div className="input-container">
-                <TiMail className="input-icon" />
-                <input
-                    type="email"
-                    placeholder="E-mail"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-            </div>
+
+          <div className="register">
+
+              <div className="input-container">
+               <TiUser className="input-icon" />
+                <input className="input"
+                type="text"
+                placeholder="Name.."
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+               />
+               </div>
+
+               <div className="input-container">
+              <TiMail className="input-icon" />
+              <input className="input"
+              type="email"
+              placeholder="E-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              />
+               </div>
+
             <div className="input-container">
             <TiKey className="input-icon" />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-            </div>
-            <div className="button-container"></div>
+            <input className="input"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+           />
+           </div>
+
+            <div className="button-container">
             <button onClick={handleRegister} className="centered-button" style={{ width: '100px', height: '30px' }}>SIGN UP</button>
+            </div>
+
+           </div>
         </div>
+        
     );
 }
 export default Register;

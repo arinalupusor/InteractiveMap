@@ -1,52 +1,27 @@
+.main-container {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width:80vh;
+    text-align: center;
+}
+
+
+
 .register {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    text-align: center;
-  }
-  
-  .input-container {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-  }
-  
-  .input-icon {
-    margin-right: 10px;
-  }
-  
-  .register-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #545252; /* Sau oricare altă culoare gri dorită */
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .register {
-    background-color: #f0f0f0;}
-  
-  .input-container {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-  }
-  
-  .input-icon {
-    margin-right: 10px;
-  }
-  .button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* Centrează orizontal */
-    align-items: center; /* Centrează vertical */
-    margin-top: 20px; /* Adaugă o distanță de 20px deasupra butonului (personalizabil) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ height: 45vh;
+  width:50vh;
+  text-align: center;
+  border: none;
+  border-radius: 5vh;
+  margin-top: 0;
+  background:linear-gradient(to bottom, rgb(248, 154, 13),#ffffff )
   }
   body {
     background: linear-gradient(to bottom, #add8e6, #fff);
@@ -59,3 +34,46 @@
     justify-content: center;
     align-items: center;
   }
+  .input-label {
+    font-size: 18px;
+    border-radius: 10px;
+    background: #ffA500; /* Fundal portocaliu pentru etichete */
+    padding: 5px 10px;
+    color: #fff; /* Culoare text albă */
+    width: 180px; /* Lățimea etichetelor */
+    height: 30px; /* Înălțimea etichetelor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .input{
+    width: 180px; /* Lățimea câmpurilor de intrare */
+    height: 30px; /* Înălțimea câmpurilor de intrare */
+    border: none;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 0;
+  }
+
+  .input-icon {
+    margin-right: 10px;
+    font-size: 24px;
+  }
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centrează orizontal */
+    align-items: center; /* Centrează vertical */
+    margin-top: 20px; /* Adaugă o distanță de 20px deasupra butonului (personalizabil) */
+  }
+ 
