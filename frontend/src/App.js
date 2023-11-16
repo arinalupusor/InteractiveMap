@@ -6,7 +6,6 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Event from './pages/Event';
 import LeafletMap from './components/LeafletMap';
-import Header from './components/Header';
 import Footer from './components/Footer';
 import AuthContext from './components/AuthContext';
 import PinPage from './pages/PinPage';
@@ -42,7 +41,6 @@ function App() {
         <AuthContext.Provider value={{isAuthenticated, setIsAuthenticated, email, setEmail, token, setToken, accountType, setAccountType}}>
             <div className="app">
                 <BrowserRouter>
-                    <Header />
                     <Routes>
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
@@ -52,7 +50,7 @@ function App() {
                         <Route path="/event" element={<Event />} />
                         <Route path="/map" element={<LeafletMap />} />
                     </Routes>
-                    <Footer />
+
                 </BrowserRouter>
             </div>
         </AuthContext.Provider>
