@@ -1,0 +1,61 @@
+.review-list {
+    list-style: none;
+    padding: 0;
+}
+
+.review {
+    margin-bottom: 15px; 
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1em; 
+}
+
+.rating > span:before,
+.rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+    color: gold;
+}
+
+body {
+    background-color: rgb(175, 221, 243);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.expandable {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.expanded {
+    max-height: 500px;
+
+.arrow-down {
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px; 
+}
+}

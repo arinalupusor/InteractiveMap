@@ -9,6 +9,7 @@ import LeafletMap from './components/LeafletMap';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AuthContext from './components/AuthContext';
+import PinPage from './pages/PinPage';
 import './App.css';
 import './Register.css';
 import './Login.css';
@@ -46,9 +47,10 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/pinPage" element={<PinPage />} />
                         <Route path="/" element={<Home />} />
                         <Route path="/event" element={<Event />} />
-                        <Route path="/map" element={<LeafletMap />} /> {/* Noua rută pentru LeafletMap */}
+                        <Route path="/map" element={<LeafletMap />} />
                     </Routes>
                     <Footer />
                 </BrowserRouter>
