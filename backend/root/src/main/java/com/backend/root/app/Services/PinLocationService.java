@@ -1,4 +1,7 @@
-package com.backend.root.app;
+package com.backend.root.app.Services;
+import com.backend.root.app.Entities.PinLocation;
+import com.backend.root.app.Entities.PinLocationDTO;
+import com.backend.root.app.Repositories.PinLocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

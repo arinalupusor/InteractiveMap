@@ -1,13 +1,6 @@
-package com.backend.root.app;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+package com.backend.root.app.Entities;
 
-@Entity
-public class PinLocation {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class PinLocationDTO {
     private Long id;
     private String description;
     private double latitude;

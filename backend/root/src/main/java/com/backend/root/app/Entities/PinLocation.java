@@ -1,10 +1,25 @@
-package com.backend.root.app;
+package com.backend.root.app.Entities;
+import jakarta.persistence.*;
 
-public class PinLocationDTO {
+import java.util.List;
+
+@Entity
+public class PinLocation {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(nullable = false)
     private String description;
+
+    @Column(nullable = false)
     private double latitude;
+
+    @Column(nullable = false)
     private double longitude;
+
+    @OneToMany(mappedBy = "pinLocation")
+    private List<Place> places;
 
     public Long getId() {
         return id;
