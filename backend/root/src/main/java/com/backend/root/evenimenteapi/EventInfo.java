@@ -1,15 +1,17 @@
 package com.backend.root.evenimenteapi;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
-@Getter
-@Setter
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -20,18 +22,41 @@ public class EventInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "id_loc", nullable = false)
-    private Long idLoc;
-
     @Column(nullable = false)
     private String name;
 
-    @Column
+    @Column(nullable = false)
+    private String location;
+
+    @Column(nullable = false)
     private String description;
 
-    @Column(name = "start_time", nullable = false)
+    @Column(nullable = false)
     private LocalDateTime startTime;
 
-    @Column(name = "end_time", nullable = false)
+    @Column(nullable = false)
     private LocalDateTime endTime;
+
+    public DisplayEventDto ToDisplayDto()
+    {
+        LocalDateTime currentTime = LocalDateTime.now();
+        String status;
+        if(currentTime.isAfter(startTime) && currentTime.isBefore(endTime))
+            status = "ongoing";
+        else if(currentTime.isBefore(startTime))
+            status = "due";
+        else
+            status = "end";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("EEEE, d MMMM", new Locale("ro", "RO"));
+        DisplayEventDto dto = new DisplayEventDto();
+        dto.setStatus(status);
+        dto.setInterval(getStartTime().format(formatter) + "-" + getEndTime().format(formatter));
+        dto.setDescription(getDescription());
+        dto.setId(getId());
+        dto.setName(getName());
+        dto.setLocation(getLocation());
+        dto.setDate(getStartTime().format(dateFormatter));
+        return dto;
+    }
 }

@@ -22,7 +22,7 @@ public class AuthenticationService {
 
     public AuthenticationResponse register(RegisterRequest request) {
         repository.findByEmail(request.getEmail()).ifPresent(user -> {throw new RuntimeException();});
-        var user = AppUser.builder().firstname(request.getFirstname()).lastname(request.getLastname()).email((request.getEmail())).password(passwordEncoder.encode(request.getPassword())).role(Role.USER).build();
+        var user = AppUser.builder().firstname(request.getFirstname()).lastname(request.getLastname()).email((request.getEmail())).password(passwordEncoder.encode(request.getPassword())).role(Role.valueOf(request.getType())).build();
         repository.save(user);
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder().token(jwtToken).email(user.getEmail()).type(user.getRole()).build();

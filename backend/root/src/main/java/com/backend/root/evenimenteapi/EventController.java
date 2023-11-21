@@ -18,20 +18,12 @@ public class EventController {
     }
 
     @GetMapping
-    public List<EventInfo> getAllEvents() {
+    public List<DisplayEventDto> getAllEvents() {
         return eventService.findAllEvents();
     }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<EventInfo> getEventById(@PathVariable Long id) {
-        return eventService.findEventById(id)
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
     @PostMapping
-    public EventInfo createEvent(@RequestBody EventInfo event) {
-        return eventService.saveEvent(event);
+    public DisplayEventDto createEvent(@RequestBody CreateEventDto event) {
+        return eventService.createEvent(event);
     }
 
     @DeleteMapping("/{id}")

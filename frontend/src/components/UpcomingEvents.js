@@ -1,12 +1,42 @@
 import React, {useContext, useState} from "react";
 import Authcontext from "./AuthContext";
 import {useNavigate} from "react-router-dom";
+import { DatePicker, TimePicker } from 'antd';
+import axios from "axios";
+import config from "../config.json";
 
 const UpcomingEvents = () => {
     const navigate = useNavigate ();
     const [selectedEvent, setSelectedEvent] = useState(null);
     const {isAuthenticated, accountType, email, token} = useContext(Authcontext);
+    const [selectedDate, setSelectedDate] = useState(null);
+    const [selectedTime, setSelectedTime] = useState(null);
 
+    const handleDateChange = (date, dateString) => {
+        setSelectedDate(date);
+        console.log(date)
+    };
+
+    const handleTimeChange = (time, timeString) => {
+        setSelectedTime(time);
+        console.log(time)
+        if(selectedDate && selectedTime)
+        {
+            axios.post(config.url + '/api/events', {
+                name: "Some basic name",
+                location: "Some basic location",
+                description: "Some basic description",
+                startTime: JSON.stringify(selectedDate),
+                endTime: JSON.stringify(selectedTime)
+            })
+                .then(response => {
+                    console.log(response.data)
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+    };
 
     const events = [
         { id: 1, name: 'Event 1', location: "Loc de joacă: Neverland", interval: "17:00-19:00", date: "Vineri, 27 Octombrie", status: "ended", description: 'Details for Events 1' },
@@ -36,6 +66,12 @@ const UpcomingEvents = () => {
             {selectedEvent && (
                 <div>
                     <p>Selected Event: {selectedEvent} </p>
+                </div>
+            )}
+            {accountType == "EVENTOWNER" && (
+                <div>
+                    <DatePicker onChange={handleDateChange} />
+                    <TimePicker onChange={handleTimeChange} />
                 </div>
             )}
         </div>
