@@ -5,6 +5,9 @@ import com.backend.root.app.Repositories.PlaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class PlaceService {
 
@@ -82,6 +85,11 @@ public class PlaceService {
         Place place = convertToEntity(placeDTO);
         place.setPinLocation(pinLocation);
         return placeRepository.save(place);
+    }
+
+    public List<PlaceDTO> searchPlacesByName(String name) {
+        List<Place> places = placeRepository.findByNameContainingIgnoreCase(name);
+        return places.stream().map(this::convertToDTO).collect(Collectors.toList());
     }
 
 

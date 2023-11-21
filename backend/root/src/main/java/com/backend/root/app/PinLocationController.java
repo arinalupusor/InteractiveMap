@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/pins")
 public class PinLocationController {
@@ -59,6 +61,12 @@ public class PinLocationController {
         }
         PlaceDisplayDTO placeDTO = placeService.convertToDTODisplay(place);
         return ResponseEntity.ok(placeDTO);
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<PlaceDTO>> searchPlaces(@RequestParam String name) {
+        List<PlaceDTO> foundPlaces = placeService.searchPlacesByName(name);
+        return ResponseEntity.ok(foundPlaces);
     }
 }
 
