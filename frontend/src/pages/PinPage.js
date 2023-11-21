@@ -1,101 +1,99 @@
-import React from 'react';
-import { useEffect } from 'react';
-import './PinPage.css';
-import {useNavigate, useParams} from "react-router-dom";
-const PinPage = () => {
-    const navigate = useNavigate ();
-    const {pin_id} = useParams(); // TODO THIS IS THE PIN ID YOU WILL USE TO EXTRACT DATA ABOUT PLACE
-    const place = { // TODO THIS IS THE PLACE OBJECT THAT HAS TO BE COMPLETED FROM BACKEND
-        id: 1,
-        title: "Loc de joacă",
-        description: "Descopera Magia Jocului in Lumea lui Oz! Jocuri pentru copii si pentru parinti… sau te poti relaxa la o cafea, in timp ce copiii au parte de distractie si de activitati creative sub supravegherea atenta a personalului nostru.",
-        bottomAttendance: "15 min",
-        upperAttendance: "2.5 ore",
-        adress: "Strada Vasile Lupu 134, Iași 700001",
-        phoneNumber: "0745 006 301",
-        email: "oz.play@yahoo.com",
-    };
-    const onBackButtonClick =  () => {
-        navigate("/");
-    }
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import LeafletMap from '../components/LeafletMap';
+import '../pages/PinPage.css';
 
+
+
+const PinPage = () => {
+    const location = useLocation();
+    const { selectedPin } = location.state || {};
+  
+    
+
+  
+  const [currentDayIndex, setCurrentDayIndex] = useState(0);
+  const daysOfWeek = ["Joi", "Vineri", "Sâmbătă", "Duminică", "Luni", "Marți", "Miercuri"];
+  const schedule = [
+    { start: "13:00", end: "21:00" },
+    { start: "13:00", end: "21:00" },
+    { start: "11:00", end: "21:00" },
+    { start: "11:00", end: "21:00" },
+    { start: "13:00", end: "21:00" },
+    { start: "13:00", end: "21:00" },
+    { start: "13:00", end: "21:00" }
+  ];
+  const [comments, setComments] = useState([]);
+  const [commentCounter, setCommentCounter] = useState(0);
+
+  const displaySchedule = () => {
+    const table = document.getElementById('scheduleTable');
+    const row = table.insertRow();
+    const dayCell = row.insertCell();
+    dayCell.innerHTML = daysOfWeek[currentDayIndex];
+    const timeCell = row.insertCell();
+    timeCell.innerHTML = schedule[currentDayIndex].start + " - " + schedule[currentDayIndex].end;
+  };
+
+  const nextDay = () => {
+    setCurrentDayIndex((currentDayIndex + 1) % daysOfWeek.length);
+    resetTable();
+    displaySchedule();
+  };
+
+  const resetTable = () => {
+    const table = document.getElementById('scheduleTable');
+    table.innerHTML = "<tr><th>Zi</th><th>Orar</th></tr>";
+  };
+
+  const addComment = () => {
+    const commentInput = document.getElementById('commentInput');
+    const commentText = commentInput.value.trim();
+
+    if (commentText !== '') {
+      setComments([...comments, commentText]);
+      commentInput.value = '';
+      updateCommentCounter();
+    }
+  };
+
+  const updateCommentCounter = () => {
+    setCommentCounter(commentCounter + 1);
+  };
 
   return (
-    <div>
-      <h1><center>oZplay</center></h1>
-      <div className="rating">
-        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    <div className="pined-page-container">
+      <div className="playground-details">
+        {selectedPin && (
+          <>
+            <h2>{selectedPin.message}</h2>
+           
+            {
+                <div id="playground-info">
+                <img src="https://sniffo.ro/img/company/domain/1336/original/17157440_774820782674794_2471036533725968672_o.jpg" alt="ozPlay" width="150" height="150" />
+                <img src="https://scontent.fclj1-2.fna.fbcdn.net/v/t39.30808-6/358373167_579594214373227_8204732665818420300_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=nfyPiySmkk8AX8KwR8y&_nc_ht=scontent.fclj1-2.fna&cb_e2o_trans=q&oh=00_AfALyuXO6WBEmTD8L7Gsg4BPzNTNarbpNuJcnFpVtvBkgA&oe=655C797B" alt="loc-de joaca" width="150" height="150" />
+                <img src="https://scontent.fclj1-2.fna.fbcdn.net/v/t39.30808-6/401510207_646520537680594_1964113055769046885_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=km2eUMBBliAAX_asLXU&_nc_oc=AQlE0o09SxYIBApfTdA1HfRq-N4SdjhdIa2OL92Zg1LnAkdUPcaBeRgBr6259Aje5f8&_nc_ht=scontent.fclj1-2.fna&cb_e2o_trans=q&oh=00_AfBJmnPU00GE_9rb_XWkHaT7-YQa8InPWHJlQcqkMEVzQw&oe=655A9E89" alt="loc-de-joaca" width="150" height="150" />
+        
+                <div id="rating-stars">
+                  <span className="half">&#9733;</span>
+                  <span className="half">&#9733;</span>
+                  <span className="half">&#9733;</span>
+                  <span className="half">&#9733;</span>
+                  <span>&#9733;</span>
+                </div>
+                
+        <a href="tel:+0745 006 301">📞: 0745 006 301</a>
+        <a href="mailto:oz.play@yahoo.com">💬: oz.play@yahoo.com</a>
       </div>
-      <center>
-        <img src="1.jpg" alt="oz" width="205" height="205" />
-        <img src="3.jpg" alt="descriere" width="205" height="205" />
-        <img src="OzPlay.jpg" alt="Play" width="205" height="205" />
-      </center>
-      <span><center> Pagină · {place.title}</center></span>
-      <span><center>⏳ De obicei, oamenii petrec Între {place.bottomAttendance} și {place.upperAttendance} aici</center></span>
-      <h3><center>Prezentare generala</center></h3>
-      <h3>Descriere</h3>
-      <p>{place.description}</p>
-      <h3>Adresă: {place.adress}</h3>
-      <div>
-        <h3>Program</h3>
-        <div className="arrow-down" onClick={toggleProgram}>▼</div>
-        <ul className="expandable expanded" id="programList">
-          <li><strong>Luni:</strong> 13–21</li>
-          <li><strong>Marți:</strong> 13–21</li>
-          <li><strong>Miercuri:</strong> 13–21</li>
-          <li><strong>Joi:</strong> 13–21</li>
-          <li><strong>Vineri:</strong> 13–21</li>
-          <li><strong>Sâmbătă:</strong> 11–21</li>
-          <li><strong>Duminică:</strong> 11–21</li>
-        </ul>
+            }
+          </>
+        )}
       </div>
-      <h3>Telefon: {place.phoneNumber}</h3>
-      <h3>📧 {place.email}</h3>
-      <button onClick={onBackButtonClick}>Înapoi la hartă</button>
+      <div className="map-container">
+      <LeafletMap pins={selectedPin ? [selectedPin] : []} />
+      </div>
     </div>
   );
 };
 
-function toggleProgram() {
-  const programList = document.getElementById('programList');
-  programList.classList.toggle('expanded');
-}
-const ReviewList = () => {
-  useEffect(() => {
-    const ratingStars = document.getElementById('ratingStars');
-    const stars = ratingStars.querySelectorAll('span');
-
-    stars.forEach((star) => {
-      star.addEventListener('click', () => {
-        const ratingValue = star.getAttribute('data-value');
-        alert(`Ai acordat ${ratingValue} stele.`);
-      });
-    });
-    return () => {
-      stars.forEach((star) => {
-        star.removeEventListener('click', () => {});
-      });
-    };
-  }, []);
-  return(
-    <ul className="review-list">
-    <li className="review">
-      <h3>Recenzii</h3>
-      <p>Ne vom întoarce (minimum de două ori pe săptămână). Personalul drăguț, locația frumoasă (o mulțime de parcare gratuită) și pereții de sare ajută pe toată lumea.</p>
-      <div className="rating">
-        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-      </div>
-    </li>
-    <li className="review">
-      <h3>Recenzii</h3>
-      <p>Un loc de joaca foarte potrivit, copiii s-au distrat de minune, animatorii au facut jocuri interesante si au stiut sa le atraga atentia. Este loc mare si pentru parinti de stat in voie, relaxati. Petrecerea a fost una reusita!</p>
-      <div className="rating">
-        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-      </div>
-    </li>
-  </ul>
-);
-};
-  
 export default PinPage;
