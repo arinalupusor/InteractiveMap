@@ -4,9 +4,8 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Event from './pages/Event';
+import Events from './pages/Events';
 import LeafletMap from './components/LeafletMap';
-import Footer from './components/Footer';
 import AuthContext from './components/AuthContext';
 import PinPage from './pages/PinPage';
 import './App.css';
@@ -45,9 +44,10 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/about" element={<About />} />
-                        <Route path="/pinPage" element={<PinPage />} />
+                        <Route path="/pinPage/:pin_id" element={<PinPage />} />
                         <Route path="/" element={<Home />} />
-                        <Route path="/event" element={<Event />} />
+                        <Route path="/event" element={<Events />} />
+                        <Route path="/event/:event_id" element={<Events />} />
                         <Route path="/map" element={<LeafletMap />} />
                     </Routes>
 
