@@ -19,7 +19,7 @@ function Register() {
         console.log(registrationData)
 
         try {
-            const response = await fetch(config.url + '/api/v1/auth/register', {
+            const response = await fetch(config.url + '/api/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
