@@ -6,7 +6,7 @@ import java.util.List;
 @Entity
 public class PinLocation {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Column(nullable = false)

@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 @Entity
 public class Place {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Column(nullable = false)
@@ -13,15 +13,15 @@ public class Place {
     @Column(nullable = false)
     private String description;
 
-    @Column(nullable = false)
-    private double latitude;
-
-    @Column(nullable = false)
-    private double longitude;
-
     @ManyToOne
     @JoinColumn(name = "pin_location_id", nullable = false)
     private PinLocation pinLocation;
+
+    private String bottomAttendance;
+    private String upperAttendance;
+    private String address;
+    private String phoneNumber;
+    private String email;
 
     // getters and setters
     public Long getId() {
@@ -48,22 +48,6 @@ public class Place {
         this.description = description;
     }
 
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
     public PinLocation getPinLocation() {
         return pinLocation;
     }
@@ -71,4 +55,45 @@ public class Place {
     public void setPinLocation(PinLocation pinLocation) {
         this.pinLocation = pinLocation;
     }
+
+    public String getBottomAttendance() {
+        return bottomAttendance;
+    }
+
+    public void setBottomAttendance(String bottomAttendance) {
+        this.bottomAttendance = bottomAttendance;
+    }
+
+    public String getUpperAttendance() {
+        return upperAttendance;
+    }
+
+    public void setUpperAttendance(String upperAttendance) {
+        this.upperAttendance = upperAttendance;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }
+

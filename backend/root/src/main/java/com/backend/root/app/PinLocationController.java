@@ -1,8 +1,5 @@
 package com.backend.root.app;
-import com.backend.root.app.Entities.PinLocation;
-import com.backend.root.app.Entities.PlaceDTO;
-import com.backend.root.app.Entities.Place;
-import com.backend.root.app.Entities.PinLocationDTO;
+import com.backend.root.app.Entities.*;
 import com.backend.root.app.Services.PinLocationService;
 import com.backend.root.app.Services.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,13 +45,21 @@ public class PinLocationController {
     }
 
     @PostMapping("/places")
-    public ResponseEntity<PlaceDTO> createPlace(@RequestBody PlaceDTO placeDTO) {
-        Place place = placeService.convertToEntity(placeDTO);
-        Place savedPlace = placeService.save(place);
-        PlaceDTO savedPlaceDTO = placeService.convertToDTO(savedPlace);
+    public ResponseEntity<PlaceDisplayDTO> createPlace(@RequestBody PlaceCreationDTO creationDTO) {
+        Place place = placeService.savePlaceWithPin(creationDTO.getPlace(), creationDTO.getLatitude(), creationDTO.getLongitude());
+        PlaceDisplayDTO savedPlaceDTO = placeService.convertToDTODisplay(place);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedPlaceDTO);
     }
 
+    @GetMapping("/{PinId}/place")
+    public ResponseEntity<PlaceDisplayDTO> getPlaceByPinId(@PathVariable Long PinId) {
+        Place place = placeService.findPlaceByPinId(PinId);
+        if (place == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        PlaceDisplayDTO placeDTO = placeService.convertToDTODisplay(place);
+        return ResponseEntity.ok(placeDTO);
+    }
 }
 
 
