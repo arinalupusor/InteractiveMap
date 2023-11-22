@@ -1,4 +1,6 @@
 package com.backend.root.app.Services;
+import com.backend.root.app.DTOs.PlaceDTO;
+import com.backend.root.app.DTOs.PlaceDisplayDTO;
 import com.backend.root.app.Entities.*;
 import com.backend.root.app.Repositories.PinLocationRepository;
 import com.backend.root.app.Repositories.PlaceRepository;
@@ -80,16 +82,16 @@ public class PlaceService {
         PinLocation pinLocation = new PinLocation();
         pinLocation.setLatitude(latitude);
         pinLocation.setLongitude(longitude);
-        pinLocation.setDescription("Descriere pin");
+        pinLocation.setDescription(placeDTO.getName());
         pinLocation = pinLocationRepository.save(pinLocation);
         Place place = convertToEntity(placeDTO);
         place.setPinLocation(pinLocation);
         return placeRepository.save(place);
     }
 
-    public List<PlaceDTO> searchPlacesByName(String name) {
+    public List<PlaceDisplayDTO> searchPlacesByName(String name) {
         List<Place> places = placeRepository.findByNameContainingIgnoreCase(name);
-        return places.stream().map(this::convertToDTO).collect(Collectors.toList());
+        return places.stream().map(this::convertToDTODisplay).collect(Collectors.toList());
     }
 
 
