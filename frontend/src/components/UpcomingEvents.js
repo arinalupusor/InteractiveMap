@@ -19,7 +19,8 @@ const UpcomingEvents = () => {
 
     const handleTimeChange = (time, timeString) => {
         setSelectedTime(time);
-        console.log(time)
+        console.log(selectedDate)
+        console.log(selectedTime)
         if(selectedDate && selectedTime)
         {
             axios.post(config.url + '/events', {
@@ -68,7 +69,7 @@ const UpcomingEvents = () => {
                     <p>Selected Event: {selectedEvent} </p>
                 </div>
             )}
-            {accountType == "EVENTOWNER" && (
+            {accountType === "EVENTOWNER" && (
                 <div>
                     <DatePicker onChange={handleDateChange} />
                     <TimePicker onChange={handleTimeChange} />

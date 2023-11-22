@@ -24,6 +24,10 @@ public class EventController {
     public List<DisplayEventDTO> getAllEvents() {
         return eventService.findAllEvents();
     }
+    @GetMapping("/upcoming")
+    public List<DisplayEventDTO> getAllUpcomingEvents() {
+        return eventService.findAllUpcomingEvents();
+    }
     @PostMapping
     public DisplayEventDTO createEvent(@RequestBody CreateEventDTO event) {
         return eventService.createEvent(event);

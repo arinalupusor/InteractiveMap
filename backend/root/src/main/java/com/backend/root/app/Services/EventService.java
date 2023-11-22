@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -29,6 +30,13 @@ public class EventService {
                 .collect(Collectors.toList());
     }
 
+    public List<DisplayEventDTO> findAllUpcomingEvents() {
+        return eventRepository.findAll().stream()
+                .sorted(Comparator.comparing(EventInfo::getStartTime))
+                .map(EventInfo::ToDisplayDto)
+                .collect(Collectors.toList());
+    }
+
     public Optional<EventInfo> findEventById(Long id) {
         return eventRepository.findById(id);
     }
@@ -37,7 +45,7 @@ public class EventService {
         event.setEndTime(event.getEndTime().substring(1, event.getEndTime().length() - 1));
         event.setStartTime(event.getStartTime().substring(1, event.getStartTime().length() - 1));
         LocalDateTime endTime = LocalDateTime.parse(event.getEndTime(), DateTimeFormatter.ISO_DATE_TIME);
-        LocalDateTime startTime = LocalDateTime.parse(event.getEndTime(), DateTimeFormatter.ISO_DATE_TIME);
+        LocalDateTime startTime = LocalDateTime.parse(event.getStartTime(), DateTimeFormatter.ISO_DATE_TIME);
         EventInfo eventInfo = EventInfo.builder().endTime(endTime).startTime(startTime).location(event.getLocation())
                 .name(event.getName()).description(event.getDescription()).build();
         if(eventInfo.getEndTime().isBefore(eventInfo.getStartTime()))
