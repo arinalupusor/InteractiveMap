@@ -1,22 +1,33 @@
-import React, { useState} from 'react';
-import {Link, useParams} from 'react-router-dom';
+import React, {useContext, useState} from 'react';
+import {Link, useNavigate, useParams} from 'react-router-dom';
 import '../Event.css';
 import Event from "../components/Event";
+import Authcontext from "../components/AuthContext";
 
 const Events = () => {
-  const [loginDropdown, setLogInDropdown] = useState(false);
+  let navigate = useNavigate();
+  const [guestDropdown, setGuestDropdown] = useState(false);
   const [signUpDropdown, setSignUpDropdown] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [feedback, setFeedback] = useState('');
+  const {isAuthenticated, setIsAuthenticated, accountType} = useContext(Authcontext);
   const {event_id} = useParams(); // TODO this event_id is null if /event is accessed, however it will contain the event id if it has been accessed through Upcoming events, you have to select the event with this id after the fetch from backend.
-  const toggleLogInDropdown = () => {
-    setLogInDropdown(!loginDropdown);
+  const toggleGuestDropdown = () => {
+    setGuestDropdown(!guestDropdown);
     setSignUpDropdown(false);
   };
 
   const toggleSignUpDropdown = () => {
     setSignUpDropdown(!signUpDropdown);
-    setLogInDropdown(false);
+    setGuestDropdown(false);
+    if(isAuthenticated)
+    {
+      localStorage.removeItem("email");
+      localStorage.removeItem("token");
+      localStorage.removeItem("accountType");
+      setIsAuthenticated(false);
+      navigate("/login")
+    }
   };
 
 
@@ -65,35 +76,32 @@ const Events = () => {
             src="https://img.icons8.com/color/48/strawberry.png" alt="strawberry"
             className="strawberry-icon"
             />
-        <div className="buttons">
+        <div className="header-buttons">
           <img className="user-icon" src="https://img.icons8.com/pulsar-color/48/user.png" alt="user" />
           <div className="dropdown">
             <button
-              className={`button ${loginDropdown ? 'active' : ''}`}
-              onClick={toggleLogInDropdown}
+                className={`header-button ${guestDropdown ? 'active' : ''}`}
+                onClick={toggleGuestDropdown}
             >
-              Log In
+              {isAuthenticated ? accountType : "Guest"}
             </button>
-            {loginDropdown && (
-              <div className="dropdown-content">
-                <Link to="/login">Log in as user</Link>
-                <Link to="/login">Log in as event owner</Link>
-                <Link to="/login">Log in as admin</Link>
-              </div>
+            {guestDropdown && (
+                <div className="dropdown-content">
+                  <Link to="/login">Log in</Link>
+                </div>
             )}
           </div>
           <div className="dropdown">
             <button
-              className={`button signup ${signUpDropdown ? 'active' : ''}`}
-              onClick={toggleSignUpDropdown}
-            >
-              Sign up
+                className={`header-button signup ${signUpDropdown ? 'active' : ''}`}
+                onClick={toggleSignUpDropdown}
+            >{!isAuthenticated ? "Sign up" : "Logout" }
             </button>
-            {signUpDropdown && (
-              <div className="dropdown-content">
-                <Link to="/register">Sign up as user</Link>
-                <Link to="/register">Sign up as event owner</Link>
-              </div>
+            {!isAuthenticated && signUpDropdown && (
+                <div className="dropdown-content">
+                  <Link to="/register/USER">Sign up as user</Link>
+                  <Link to="/register/EVENTOWNER">Sign up as event owner</Link>
+                </div>
             )}
           </div>
         </div>

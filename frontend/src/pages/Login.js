@@ -20,7 +20,7 @@ function Login() {
             return
         }
 
-        axios.post(config.url + '/api/auth/authenticate', {
+        axios.post(config.url + '/auth/authenticate', {
             email: loginEmail,
             password: password
         })

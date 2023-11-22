@@ -1,5 +1,5 @@
 {
-  "url" : "http://localhost:8080",
+  "url" : "http://localhost:8080/api",
   "ADMIN" : "ADMIN",
   "USER": "USER",
   "EVENT_OWNER": "EVENTOWNER"

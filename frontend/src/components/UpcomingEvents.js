@@ -22,7 +22,7 @@ const UpcomingEvents = () => {
         console.log(time)
         if(selectedDate && selectedTime)
         {
-            axios.post(config.url + '/api/events', {
+            axios.post(config.url + '/events', {
                 name: "Some basic name",
                 location: "Some basic location",
                 description: "Some basic description",

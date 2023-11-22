@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { TiUser, TiMail,  TiKey } from 'react-icons/ti';
 import config from "../config.json"
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 function Register() {
+    let {type} = useParams();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -15,11 +16,12 @@ function Register() {
             lastname: '', // completați corespunzător
             email,
             password,
+            type,
         };
         console.log(registrationData)
 
         try {
-            const response = await fetch(config.url + '/api/auth/register', {
+            const response = await fetch(config.url + '/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -39,6 +41,8 @@ function Register() {
             console.error('Eroare de rețea:', error);
         }
     };
+    if(type !== "EVENTOWNER" && type !== "USER")
+        return null;
 
     return (
         <div className="main-container">
@@ -86,7 +90,7 @@ function Register() {
 
            </div>
         </div>
-        
+
     );
 }
 export default Register;

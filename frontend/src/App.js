@@ -42,7 +42,7 @@ function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
+                        <Route path="/register/:type" element={<Register />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/pinPage/:pin_id" element={<PinPage />} />
                         <Route path="/" element={<Home />} />
