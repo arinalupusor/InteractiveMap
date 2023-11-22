@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import './Header.css';
 import Authcontext from "./AuthContext";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Header = () => {
     const [guestDropdown, setGuestDropdown] = useState(false);
@@ -63,9 +63,7 @@ const Header = () => {
                     </button>
                     {guestDropdown && (
                         <div className="dropdown-content">
-                            <a href="/login">Log in as user</a>
-                            <a href="/login">Log in as event owner</a>
-                            <a href="/login">Log in as admin</a>
+                            <Link to="/login">Log in</Link>
                         </div>
                     )}
                 </div>
@@ -77,8 +75,8 @@ const Header = () => {
                     </button>
                     {!isAuthenticated && signUpDropdown && (
                         <div className="dropdown-content">
-                            <a href="/register">Sign up as user</a>
-                            <a href="/register">Sign up as event owner</a>
+                            <Link to="/register/USER">Sign up as user</Link>
+                            <Link to="/register/EVENTOWNER">Sign up as event owner</Link>
                         </div>
                     )}
                 </div>
