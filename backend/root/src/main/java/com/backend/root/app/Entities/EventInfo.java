@@ -47,7 +47,7 @@ public class EventInfo {
         else if(currentTime.isBefore(startTime))
             status = "due";
         else
-            status = "end";
+            status = "ended";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("EEEE, d MMMM", new Locale("ro", "RO"));
         DisplayEventDTO dto = new DisplayEventDTO();
