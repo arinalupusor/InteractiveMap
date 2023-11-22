@@ -1,11 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useEffect } from 'react';
 import './PinPage.css';
 import {useNavigate, useParams} from "react-router-dom";
+import axios from "axios";
+import config from "../config.json";
 const PinPage = () => {
     const navigate = useNavigate ();
-    const {pin_id} = useParams(); // TODO THIS IS THE PIN ID YOU WILL USE TO EXTRACT DATA ABOUT PLACE
-    const place = { // TODO THIS IS THE PLACE OBJECT THAT HAS TO BE COMPLETED FROM BACKEND
+    const {pin_id} = useParams();
+    const [place, setPlace] = useState(null);
+    const [error, setError] = useState("");
+    const getPlace = async () => {
+        try {
+            const response = await axios.get(config.url + '/pins/' + parseInt(pin_id) + "/place");
+            setPlace(response.data);
+        } catch (error) {
+            console.log('Failed to fetch from backend');
+            console.log(error);
+            setError(error.message);
+        }
+    };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            await getPlace();
+        };
+
+        fetchData();
+    }, []);
+    /*
+    const place = {
         id: 1,
         title: "Loc de joacă",
         description: "Descopera Magia Jocului in Lumea lui Oz! Jocuri pentru copii si pentru parinti… sau te poti relaxa la o cafea, in timp ce copiii au parte de distractie si de activitati creative sub supravegherea atenta a personalului nostru.",
@@ -15,13 +38,16 @@ const PinPage = () => {
         phoneNumber: "0745 006 301",
         email: "oz.play@yahoo.com",
     };
+
+     */
     const onBackButtonClick =  () => {
         navigate("/");
     }
 
-
   return (
     <div>
+        {place ? (
+            <>
       <h1><center>oZplay</center></h1>
       <div className="rating">
         <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
@@ -36,7 +62,7 @@ const PinPage = () => {
       <h3><center>Prezentare generala</center></h3>
       <h3>Descriere</h3>
       <p>{place.description}</p>
-      <h3>Adresă: {place.adress}</h3>
+      <h3>Adresă: {place.address}</h3>
       <div>
         <h3>Program</h3>
         <div className="arrow-down" onClick={toggleProgram}>▼</div>
@@ -53,6 +79,7 @@ const PinPage = () => {
       <h3>Telefon: {place.phoneNumber}</h3>
       <h3>📧 {place.email}</h3>
       <button onClick={onBackButtonClick}>Înapoi la hartă</button>
+            </>) : null}
     </div>
   );
 };

@@ -1,17 +1,22 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Link, useNavigate, useParams} from 'react-router-dom';
 import '../Event.css';
 import Event from "../components/Event";
 import Authcontext from "../components/AuthContext";
+import axios from "axios";
+import config from "../config.json";
 
 const Events = () => {
   let navigate = useNavigate();
   const [guestDropdown, setGuestDropdown] = useState(false);
   const [signUpDropdown, setSignUpDropdown] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [events, setEvents] = useState([]);
+  const [error, setError] = useState([]);
   const [feedback, setFeedback] = useState('');
+  const [selectedEventId, setSelectedEventId] = useState(null);
   const {isAuthenticated, setIsAuthenticated, accountType} = useContext(Authcontext);
-  const {event_id} = useParams(); // TODO this event_id is null if /event is accessed, however it will contain the event id if it has been accessed through Upcoming events, you have to select the event with this id after the fetch from backend.
+  const {event_id} = useParams();
+
   const toggleGuestDropdown = () => {
     setGuestDropdown(!guestDropdown);
     setSignUpDropdown(false);
@@ -29,17 +34,45 @@ const Events = () => {
       navigate("/login")
     }
   };
+  const getEventById = (id) => {
+    return events.find((event) => event.id === id);
+  };
 
+  const getEvents = async () => {
+    try {
+      const response = await axios.get(config.url + '/events/upcoming');
+      setEvents(response.data);
+    } catch (error) {
+      console.log('Failed to fetch from backend');
+      console.log(error)
+      setError(error.name);
+    }
+  };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      await getEvents();
+    };
+    fetchData()
+  }, []);
+/*
   const events = [
     { id: 1, name: 'Event 1', location: "Loc de joacă: Neverland", interval: "17:00-19:00", date: "Vineri, 27 Octombrie", status: "ended", description: 'Details for Events 1' },
     { id: 2, name: 'Event 2', location: "Loc de joacă: Neverland", interval: "17:00-19:00", date: "Vineri, 27 Octombrie", status: "ongoing", description: 'Details for Events 2' },
     { id: 3, name: 'Halloween Party', location: "Loc de joacă: Neverland", interval: "17:00-19:00", date: "Vineri, 27 Octombrie", status: "due", description: 'Participă la o extraordinară petrecere de Halloween, unde atmosfera este plină de bucurie și surprize! Prin achitarea unei taxe de participare de 100 de lei, copilul dumneavoastră va avea parte de experiențe captivante, inclusiv pictură pe față, participare la parada de costume, implicare în jocuri și concursuri tematice. Servim pizza delicioasă, băuturi răcoritoare, precum și apă, oferind, de asemenea, un desert surpriză care va aduce un zâmbet pe fața fiecărui mic invitat, într-un mod amuzant și tematic. Alătură-te nouă pentru o petrecere de Halloween memorabilă și plină de distracție!' },
-  ]; //TODO THIS EVENT LIST SHOULD COME FROM BACKEND
+  ];
+*/
+  useEffect(() => {
+    if (event_id) {
+      setSelectedEventId(parseInt(event_id)); // Ensure event_id is parsed to integer
+    }
+  }, [event_id]);
 
-  const handleEventClick = (event) => {
-    setSelectedEvent((prevEvent) => (prevEvent && prevEvent.id === event.id ? null : event));
+  const handleEventClick = (id) => {
+    setSelectedEventId((prevId) => (prevId === id ? null : id));
   };
+
+  const selectedEvent = selectedEventId ? getEventById(selectedEventId) : null;
 
   const handleFeedbackChange = (event) => {
     setFeedback(event.target.value);
