@@ -95,7 +95,8 @@ li{
   cursor: pointer;
   margin: 5px o;
   padding: 8px;
-  background-color: #eee;
+  background-color: #db8d34;
+  border-radius: 10px;
 
 }
 li:hover{
@@ -123,7 +124,7 @@ li:hover{
   float: right;
   background-color: #ffec8b;
   border: 1px solid #ddd;
-  border-radius: 10px;
+  border-radius: 20px;
   width: 250px;
   padding: 20px;
   margin-top: 20px;
@@ -140,10 +141,10 @@ li:hover{
   margin-bottom: 10px;
   cursor: pointer;
   padding: 8px;
-  background-color: #eee;
+  background-color: #db8d34;;
 }
 .upcoming-events .upcoming-events-list-item:hover {
-  background-color: #ddd;
+  background-color: #db8d34;;
 }
 
 .app-container {
