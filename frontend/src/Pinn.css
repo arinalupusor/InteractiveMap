@@ -1,6 +1,24 @@
-.pin button {
-    background-color: transparent;
-   
+.home-container {
+    /* Stilurile existente ale containerului principal */
+    position: relative; /* Adaugă această proprietate pentru a face posibilă poziționarea absolută a butoanelor în container */
 }
+
+.button-container {
+    position: absolute; /* Schimbă la poziționare absolută pentru a le poziționa relativ la .home-container */
+    bottom: 20px; /* Schimbă la o valoare mai mare pentru a le poziționa mai sus */
+    right: 20px; /* Schimbă la o valoare mai mare pentru a le poziționa mai la stânga */
+    display: flex;
+}
+
+.create-event-button,
+.view-my-events-button {
+    margin-left: 10px;
+}
+
+/* Adaugă spațiu între butoane */
+.create-event-button {
+    margin-right: 10px;
+}
+
 
 

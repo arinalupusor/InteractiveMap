@@ -11,6 +11,10 @@ import PinPage from './pages/PinPage';
 import './App.css';
 import './Register.css';
 import './Login.css';
+import CreateEvent from './pages/CreateEvent';
+import ViewmyEvents from './pages/ViewmyEvents';
+import './CreateEvent.css';
+import './Viewmyevents.css';
 
 function App() {
     const [email, setEmail] = useState(() => {
@@ -49,6 +53,8 @@ function App() {
                         <Route path="/event" element={<Events />} />
                         <Route path="/event/:event_id" element={<Events />} />
                         <Route path="/map" element={<LeafletMap />} />
+                        <Route path="/create-event" element={<CreateEvent />} /> 
+                        <Route path="/view-my-events" element={<ViewmyEvents />} /> 
                     </Routes>
 
                 </BrowserRouter>

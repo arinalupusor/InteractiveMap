@@ -67,6 +67,7 @@
     font-weight: bold;
     cursor: pointer;
     border-radius: 20px;
+    margin-right: 50px;
 }
 
 .hot-air-balloon {
@@ -80,6 +81,27 @@
     width: 140px;
     height: 120px;
 }
+
+.events-container{
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+li{
+  cursor: pointer;
+  margin: 5px o;
+  padding: 8px;
+  background-color: #eee;
+
+}
+li:hover{
+  background-color: #ddd;
+}
+
 .home-container {
   display: flex;
   justify-content: space-between;
@@ -93,8 +115,35 @@
 .upcoming-events {
   width: 50%;
   margin-left: 100px;
+  margin-right: 50px;
   flex: 1;
   padding: 20px;
+}
+.upcoming-events .events-box{
+  float: right;
+  background-color: #ffec8b;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  padding: 20px;
+  margin-top: 20px;
+}
+.upcoming-events .events-container{
+  max-height: 300px;
+  overflow-y: auto;
+}
+.upcoming-events .upcoming-events-list {
+  list-style-type: none;
+  padding: 0;
+}
+.upcoming-events .upcoming-events-list-item {
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 8px;
+  background-color: #eee;
+}
+.upcoming-events .upcoming-events-list-item:hover {
+  background-color: #ddd;
 }
 
 .app-container {
@@ -117,4 +166,7 @@ footer {
   position: absolute;
   bottom: 120px;
   right: 20px;
+}
+.button-container{
+  margin-right: 90px;
 }

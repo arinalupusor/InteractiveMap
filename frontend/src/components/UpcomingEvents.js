@@ -9,8 +9,8 @@ const UpcomingEvents = () => {
 
 
     const events = [
-        { id: 1, name: 'Event 1', location: "Loc de joacă: Neverland", interval: "17:00-19:00", date: "Vineri, 27 Octombrie", status: "ended", description: 'Details for Events 1' },
-        { id: 2, name: 'Event 2', location: "Loc de joacă: Neverland", interval: "17:00-19:00", date: "Vineri, 27 Octombrie", status: "ongoing", description: 'Details for Events 2' },
+        { id: 1, name: 'Moş Crăciun şi spiriduşii', location: "Loc de joacă: Neverland", interval: "17:00-19:00", date: "Vineri, 27 Octombrie", status: "ended", description: 'Bucură+te de magia sărbătotilor alături de Moş Crăciun şi spiriduşii lui!Locul de joacă Neverland se transformă într-o lume de basm, plină de surprize și veselie. Participă la ateliere de creație, întâlnește spiridușii jucauși și primește cadouri minunate de la Moș Crăciun însuși. Un eveniment plin de bucurie și amintiri frumoase pentru toți copiii! Detalii despre ateliere și activități vor fi dezvăluite în curând.' },
+        { id: 2, name: 'Moş Nicolae', location: "Loc de joacă: Neverland", interval: "17:00-19:00", date: "Vineri, 27 Octombrie", status: "ongoing", description: 'Întâlnește-l pe Moș Nicolae într-o seară magică la locul de joacă Neverland! Participă la distracții speciale și surprize de sărbătoare. Moș Nicolae va aduce daruri pentru toți copiii cuminti și va împărți bucurie și zâmbete. Vino cu familia și prietenii tăi pentru a marca împreună această sărbătoare minunată! Detalii despre program și activități vor fi dezvăluite în curând.' },
         { id: 3, name: 'Halloween Party', location: "Loc de joacă: Neverland", interval: "17:00-19:00", date: "Vineri, 27 Octombrie", status: "due", description: 'Participă la o extraordinară petrecere de Halloween, unde atmosfera este plină de bucurie și surprize! Prin achitarea unei taxe de participare de 100 de lei, copilul dumneavoastră va avea parte de experiențe captivante, inclusiv pictură pe față, participare la parada de costume, implicare în jocuri și concursuri tematice. Servim pizza delicioasă, băuturi răcoritoare, precum și apă, oferind, de asemenea, un desert surpriză care va aduce un zâmbet pe fața fiecărui mic invitat, într-un mod amuzant și tematic. Alătură-te nouă pentru o petrecere de Halloween memorabilă și plină de distracție!' },
     ]; //TODO THIS EVENTS SHOULD COME FROM BACKEND, BUT IN DESCENDING ORDER
 
@@ -25,6 +25,7 @@ const UpcomingEvents = () => {
                 <h2>Upcoming Events</h2>
                 <div className="button-image-container">
                 </div>
+                <div className="events-container">
                 <ul>
                     {events.map((event, index) => (
                         <li key={index} onClick={() => handleEventClick(event)}>
@@ -33,9 +34,14 @@ const UpcomingEvents = () => {
                     ))}
                 </ul>
             </div>
+            </div>
             {selectedEvent && (
                 <div>
-                    <p>Selected Event: {selectedEvent} </p>
+                    <p>Selected Event: {selectedEvent.name} </p>
+                    <p>Location:{selectedEvent.location} </p>
+                    <p>Interval:{selectedEvent.interval} </p>
+                    <p>Date:{selectedEvent.date} </p>
+                    <p>Description:{selectedEvent.description} </p>
                 </div>
             )}
         </div>
