@@ -3,6 +3,7 @@ import "../Pinn.css";
 import Authcontext from "../components/AuthContext";
 import LeafletMap from "../components/LeafletMap";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function MapContainer() {
     return (
@@ -59,6 +60,7 @@ const Home = () => {
             <Header />
             <MapContainer />
             <UpcomingEvents upcomingEvents={upcomingEvents} />
+            <Footer/>
         </div>
     );
 };

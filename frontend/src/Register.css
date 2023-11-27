@@ -1,79 +1,125 @@
 .main-container {
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    width:80vh;
-    text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100vw;
+  text-align: center;
 }
-
-
 
 .register {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
- height: 45vh;
-  width:50vh;
+  justify-content: space-between;
+  height: 60vh; 
+  width: 50vh;
   text-align: center;
   border: none;
   border-radius: 5vh;
   margin-top: 0;
-  background:linear-gradient(to bottom, rgb(248, 154, 13),#ffffff )
-  }
-  body {
-    background: linear-gradient(to bottom, #add8e6, #fff);
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    height: 100vh; /* Asigură-te că fundalul se întinde pe întreaga înălțime a paginii */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .input-label {
-    font-size: 18px;
-    border-radius: 10px;
-    background: #ffA500; /* Fundal portocaliu pentru etichete */
-    padding: 5px 10px;
-    color: #fff; /* Culoare text albă */
-    width: 180px; /* Lățimea etichetelor */
-    height: 30px; /* Înălțimea etichetelor */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-  }
+  background: linear-gradient(to bottom, rgb(248, 154, 13), #ffffff);
+}
 
 
-  .input-container {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-  }
-  
-  .input{
-    width: 180px; /* Lățimea câmpurilor de intrare */
-    height: 30px; /* Înălțimea câmpurilor de intrare */
-    border: none;
-    border-radius: 10px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    margin-bottom: 0;
-  }
+.body {
+  background: linear-gradient(to bottom, #add8e6, #fff);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .input-icon {
-    margin-right: 10px;
-    font-size: 24px;
-  }
-  .button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* Centrează orizontal */
-    align-items: center; /* Centrează vertical */
-    margin-top: 20px; /* Adaugă o distanță de 20px deasupra butonului (personalizabil) */
-  }
- 
+.input-label {
+  font-size: 18px;
+  border-radius: 10px;
+  background: #ffA500;
+  padding: 5px 10px;
+  color: #fff;
+  width: 180px;
+  margin: 5px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  margin: 5px;
+}
+
+.input {
+  width: 180px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+
+.input-icon {
+  font-size: 24px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-end; 
+  align-items: center;
+  height: 100%; 
+}
+
+.centered-button {
+  width: 100px;
+  height: 30px;
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+}
+
+.go-back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #FFA500; 
+  border: 1px solid #000; 
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #000; 
+  text-decoration: none;
+}
+
+.home-icon {
+  margin-right: 5px; 
+}
+
+.login-button-container {
+  position: absolute;
+  bottom: 110px;
+  right: 570px;
+}
+
+.login-button {
+  background-color: rgba(0, 128, 0, 0); 
+  color: #000000; 
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-button:hover {
+  background-color:rgba(0, 128, 0, 0);
+  text-decoration: none;
+}
+
+
+
+
+

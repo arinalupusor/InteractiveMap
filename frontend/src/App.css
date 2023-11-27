@@ -84,12 +84,19 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
-}
-.map-container {
-  flex: 1;
-  width: 50%;
+  margin-top: -100px;
+  
 }
 
+.map-container {
+  flex: 1;
+  z-index: 1;
+  width: 50%;
+}
+.custom-footer{
+z-index: 0;
+
+}
 .upcoming-events {
   width: 50%;
   margin-left: 100px;
@@ -102,17 +109,7 @@
   position: relative;
  padding-bottom: 50px;
 }
-footer {
-  margin-top: 20px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  color: #020202;
-  text-align: left;
-}
-.footer-content {
-  padding: 10px 0;
-}
+
 .image-container{
   position: absolute;
   bottom: 120px;

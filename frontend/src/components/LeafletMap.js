@@ -10,9 +10,9 @@ import image3 from "../images/image3.png";
 
 const LeafletMap = () => {
     const navigate = useNavigate ();
-    const handleMarkerClick = (message) => {
-        console.log("You clicked");
-        navigate('/pinPage');
+    const handleMarkerClick = (eventId) => {
+        console.log(`You clicked on event ${eventId}`);
+        navigate(`/event/${eventId}`); 
     };
     const pins = [
         {
@@ -22,8 +22,8 @@ const LeafletMap = () => {
                 iconSize: [32, 32],
                 iconAnchor: [16, 32],
             }),
-            position: [47.14395421490899, 27.582079811929617],
-            message: 'You clicked on purple pin',
+            position: [47.14897560927193, 27.621073252411787],
+            message: 'Kids-Mania',
         },
         {
             
@@ -33,8 +33,8 @@ const LeafletMap = () => {
                 iconSize: [32, 32],
                 iconAnchor: [16, 32],
             }),
-            position: [47.16170746357623, 27.612238821160567],
-            message:"OzPlay"
+            position: [47.1539306289, 27.5695681572],
+            message:"Trilulici Club"
         },
         
         
@@ -46,8 +46,8 @@ const LeafletMap = () => {
                 iconSize: [32, 32],
                 iconAnchor: [16, 32],
             }),
-            position: [47.151885082487524, 27.581064364582836],
-            message: 'You clicked on green pin',
+            position: [47.13398385145664, 27.57130849693622],
+            message: 'Neverland',
         },
     ];
     const mapStyles = {
