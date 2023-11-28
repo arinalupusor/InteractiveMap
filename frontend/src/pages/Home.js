@@ -1,10 +1,11 @@
 import React, { useState, useContext } from "react";
-import "../Pinn.css";
+import "./StyleSheets/Pinn.css";
 import Authcontext from "../components/AuthContext";
 import LeafletMap from "../components/LeafletMap";
 import Header from "../components/Header";
 import UpcomingEvents from "../components/UpcomingEvents";
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 const Home = () => {
     const { isAuthenticated, accountType, email, token } = useContext(Authcontext);

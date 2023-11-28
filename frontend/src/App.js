@@ -8,15 +8,16 @@ import Events from './pages/Events';
 import LeafletMap from './components/LeafletMap';
 import AuthContext from './components/AuthContext';
 import PinPage from './pages/PinPage';
-import './App.css';
-import './Register.css';
-import './Login.css';
+import './pages/StyleSheets/App.css';
+import './pages/StyleSheets/Register.css';
+import './pages/StyleSheets/Login.css';
 import CreateEvent from './pages/CreateEvent';
 import ViewmyEvents from './pages/ViewmyEvents';
-import './CreateEvent.css';
-import './Viewmyevents.css';
+import './pages/StyleSheets/CreateEvent.css';
+import './pages/StyleSheets/Viewmyevents.css';
 
 function App() {
+    
     const [email, setEmail] = useState(() => {
         let email = localStorage.getItem("email")
         if (!email)
@@ -39,7 +40,7 @@ function App() {
     });
 
     const [isAuthenticated, setIsAuthenticated] = useState(!!(localStorage.getItem("token")));
-
+    
     return (
         <AuthContext.Provider value={{isAuthenticated, setIsAuthenticated, email, setEmail, token, setToken, accountType, setAccountType}}>
             <div className="app">
@@ -56,9 +57,11 @@ function App() {
                         <Route path="/create-event" element={<CreateEvent />} />
                         <Route path="/view-my-events" element={<ViewmyEvents />} />
                     </Routes>
-
+                    
                 </BrowserRouter>
+                
             </div>
+            
         </AuthContext.Provider>
     );
 }

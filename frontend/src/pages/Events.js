@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Link, useNavigate, useParams} from 'react-router-dom';
-import '../Event.css';
+import './StyleSheets/Event.css';
 import Event from "../components/Event";
 import Authcontext from "../components/AuthContext";
 import axios from "axios";
