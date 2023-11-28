@@ -1,6 +1,7 @@
 import React, {useEffect, useMemo, useState} from "react";
 import StarRating from "./StarRating";
-const Event = ({selectedEvent}) => {
+import { FaTimes } from 'react-icons/fa';
+const Event = ({selectedEvent, setSelectedEventId}) => {
     const statusMessage = {
         ended: "This event has ended!",
         ongoing: "This event is ongoing!",
@@ -62,9 +63,11 @@ const Event = ({selectedEvent}) => {
     const handleRatingChange = (newRating) => {
         setRating(newRating);
     };
-
     return (
        <div className="event-details-container">
+           <button className="close-button" onClick={() => setSelectedEventId(null)}>
+               <FaTimes />
+           </button>
            <h2>{selectedEvent.name}</h2>
            <div className="image-interval">
                <img src={eventIntervals[currentImageIndex]} alt={`Event ${currentImageIndex + 1}`} />

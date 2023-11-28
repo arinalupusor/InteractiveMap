@@ -93,7 +93,7 @@ ul{
 }
 li{
   cursor: pointer;
-  margin: 5px o;
+  margin: 5px;
   padding: 8px;
   background-color: #db8d34;
   border-radius: 10px;
@@ -107,10 +107,15 @@ li:hover{
   display: flex;
   justify-content: space-between;
   padding: 20px;
+    margin-top: -100px;
 }
 .map-container {
   flex: 1;
+    z-index: 1;
   width: 50%;
+}
+.custom-footer{
+    z-index: 0;
 }
 
 .upcoming-events {
@@ -152,17 +157,7 @@ li:hover{
   position: relative;
  padding-bottom: 50px;
 }
-footer {
-  margin-top: 20px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  color: #020202;
-  text-align: left;
-}
-.footer-content {
-  padding: 10px 0;
-}
+
 .image-container{
   position: absolute;
   bottom: 120px;

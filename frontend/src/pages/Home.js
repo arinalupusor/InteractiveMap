@@ -12,19 +12,22 @@ const Home = () => {
 
 
     return (
-        <div className="home-container">
-            <Header />
-            <LeafletMap />
-            <UpcomingEvents />
+        <div>
+            <div className="home-container">
+                <Header />
+                <LeafletMap />
+                <UpcomingEvents />
 
-            <div className="button-container">
-            <Link to="/create-event">
-                <button className="create-event-button">Create Event</button>
-                </Link>
-                <Link to="/view-my-events">
-                <button className="view-my-events-button">View My Events</button>
-                </Link>
+                <div className="button-container">
+                    <Link to="/create-event">
+                    <button className="create-event-button">Create Event</button>
+                    </Link>
+                    <Link to="/view-my-events">
+                    <button className="view-my-events-button">View My Events</button>
+                    </Link>
+                </div>
             </div>
+            <Footer/>
         </div>
     );
 };

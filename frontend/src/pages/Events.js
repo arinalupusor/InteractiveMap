@@ -1,10 +1,11 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import {Link, useNavigate, useParams} from 'react-router-dom';
 import './StyleSheets/Event.css';
 import Event from "../components/Event";
 import Authcontext from "../components/AuthContext";
 import axios from "axios";
 import config from "../config.json";
+import {FaTimes} from "react-icons/fa";
 
 const Events = () => {
   let navigate = useNavigate();
@@ -42,6 +43,7 @@ const Events = () => {
     try {
       const response = await axios.get(config.url + '/events/upcoming');
       setEvents(response.data);
+      console.log(response.data)
     } catch (error) {
       console.log('Failed to fetch from backend');
       console.log(error)
@@ -55,6 +57,12 @@ const Events = () => {
     };
     fetchData()
   }, []);
+  useEffect(() => {
+    if(event_id && events.length > 0)
+    {
+      setSelectedEventId(getEventById(parseInt(event_id)));
+    }
+  }, [events, event_id]);
 /*
   const events = [
     { id: 1, name: 'Moş Crăciun şi spiriduşii', location: "Loc de joacă: Neverland", interval: "17:00-19:00", date: "Vineri, 27 Octombrie", status: "ended", description: 'Details for Events 1' },
@@ -62,17 +70,12 @@ const Events = () => {
     { id: 3, name: 'Halloween Party', location: "Loc de joacă: Neverland", interval: "17:00-19:00", date: "Vineri, 27 Octombrie", status: "due", description: 'Participă la o extraordinară petrecere de Halloween, unde atmosfera este plină de bucurie și surprize! Prin achitarea unei taxe de participare de 100 de lei, copilul dumneavoastră va avea parte de experiențe captivante, inclusiv pictură pe față, participare la parada de costume, implicare în jocuri și concursuri tematice. Servim pizza delicioasă, băuturi răcoritoare, precum și apă, oferind, de asemenea, un desert surpriză care va aduce un zâmbet pe fața fiecărui mic invitat, într-un mod amuzant și tematic. Alătură-te nouă pentru o petrecere de Halloween memorabilă și plină de distracție!' },
   ];
 */
-  useEffect(() => {
-    if (event_id) {
-      setSelectedEventId(parseInt(event_id)); // Ensure event_id is parsed to integer
-    }
-  }, [event_id]);
 
-  const handleEventClick = (id) => {
-    setSelectedEventId((prevId) => (prevId === id ? null : id));
+  const handleEventClick = (event) => {
+    setSelectedEventId((prevEvent) => (prevEvent === event ? null : event));
   };
 
-  const selectedEvent = selectedEventId ? getEventById(selectedEventId) : null;
+  const selectedEvent =selectedEventId ? getEventById(selectedEventId.id) : null;
 
   const handleFeedbackChange = (event) => {
     setFeedback(event.target.value);
@@ -156,7 +159,7 @@ const Events = () => {
         </div>
 
         {selectedEvent ? (
-          <Event selectedEvent={selectedEvent}></Event>
+          <Event selectedEvent={selectedEvent} setSelectedEventId={setSelectedEventId}></Event>
         ) : (
           <div className="intro-container">
           <h2>Welcome to Interactive Events!</h2>
