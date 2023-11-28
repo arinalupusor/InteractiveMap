@@ -1,5 +1,5 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {Link, useNavigate, useParams} from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import '../Event.css';
 import Event from "../components/Event";
 import Authcontext from "../components/AuthContext";
@@ -7,7 +7,7 @@ import axios from "axios";
 import config from "../config.json";
 
 const Events = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [guestDropdown, setGuestDropdown] = useState(false);
   const [signUpDropdown, setSignUpDropdown] = useState(false);
   const [events, setEvents] = useState([]);
@@ -45,7 +45,7 @@ const Events = () => {
     } catch (error) {
       console.log('Failed to fetch from backend');
       console.log(error)
-      setError(error.name);
+      setError('Failed to fetch events. Please try again later.');
     }
   };
 
@@ -80,9 +80,28 @@ const Events = () => {
 
   const handleSubmitFeedback = (event) => {
     event.preventDefault();
-    console.log('Feedback submitted:', feedback);
-    setFeedback('');
+
+    if (isAuthenticated && accountType === 'Guest') {
+      localStorage.setItem('accountType', 'USER');
+      setFeedback(''); 
+      const waitForAuthentication = async () => {
+        
+        if (isAuthenticated) {
+          console.log(`Navigating to /register/${accountType}`);
+          navigate(`/register/${accountType}`);
+        } else {
+          setTimeout(waitForAuthentication, 100);
+        }
+      };
+      waitForAuthentication();
+    
+    } 
+    else {
+      console.log('Feedback submitted:', feedback);
+      setFeedback('');
+    }
   };
+
 
   return (
     <div>
@@ -142,6 +161,9 @@ const Events = () => {
       <div className="content-container">
         <div className="event-list-container">
           <h2>Choose your event:</h2>
+
+{error && <p style={{color: 'red'}}>{error}</p>}
+
           <div className="event-list">
             {events.map((event) => (
               <div
@@ -181,7 +203,9 @@ const Events = () => {
               onChange={handleFeedbackChange}
               required
             ></textarea>
-            <button type="submit">Submit Feedback</button>
+            <button type="submit" onClick={handleSubmitFeedback}>
+              Submit Feedback
+              </button>
           </form>
         </div>
       )}
