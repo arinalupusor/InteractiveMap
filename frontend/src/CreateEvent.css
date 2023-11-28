@@ -1,0 +1,47 @@
+.create-event-container {
+    max-width: 500;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+}
+h2 {
+    text-align: center;
+    position: relative;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+
+}
+input:hover,
+input:focus {
+  border-color: #af4c86; /* sau orice altă culoare pe care o preferi */
+}
+button {
+    width: 200px;
+    padding: 15px;
+    background-color: #88238d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+  }
+  
+  button:hover,
+  button:focus {
+    background-color: #45a049;
+  }
+  input {
+    display: inline-block;
+    padding: 10px;
+    background-color: #dae7f0; /* sau orice altă culoare pe care o preferi */
+    color: #030303; /* culoare text */
+    border-radius: 10px; /* valoarea border-radius controlează gradul de rotunjire a colțurilor */
+    margin-bottom: 10px;
+  }
+  
+  
