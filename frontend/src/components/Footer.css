@@ -1,55 +1,62 @@
-.Footer{
-    body {
-        margin: 0;
-        padding: 0;
-      position: relative;
-      min-height: 100vh;
-      }
-      main{
-        margin-bottom: 50px;
-      }
-      
-     .content{
-        flex: 1;
-     }
-     footer{
-        background-color: rgb(80, 187, 233);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%; 
-        padding: 10px;
-        text-align: center;
-      }
-        hr{
-            border: none;
-            border-top: 1px solid #ccc;
-            margin: 20px 0;
-        }
-       
-        .contact{
-            text-align:start;
-            color: black;
-            border: #007BFF;
-            
-        }
-    
-       .links a{
-        text-decoration: none;
-     color: black;
-      display: block;
-       margin-bottom: 10px;
-       }
-        .privacy-link{
-            background-color: #88b6e8;
-            color: #007BFF; 
-      text-decoration: none; 
-      font-weight: bold;
-        }
-        .terms-link{
-            background-color: #97bce462;
-            color: #007bff62; 
-      text-decoration: none; 
-      font-weight: bold;
-        }
-    }
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: auto;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid rgb(198, 238, 236);
+}
+
+.left-section {
+  text-align: left;
+  flex-direction: column;
+  margin-left: 50px;
+  margin-top: -20px;
+}
+
+.contact-text {
+  font-size: 14px;
+  margin-top: -10px; 
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.phone-info,
+.email-info {
+  display: flex;
+  align-items: center;
+  margin-top: -20px; 
+}
+.phone{
+  font-size: 14px;
+  text-decoration: underline;
+}
+.email{
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.middle-section {
+  text-align: center;
+  flex: 1;
+}
+.middle-section a {
+  text-decoration: underline;
+  color: #000000; 
+}
+
+.right-section {
+  text-align: right;
+  margin-right: 50px;
+}
