@@ -6,9 +6,8 @@ import Header from "../components/Header";
 import UpcomingEvents from "../components/UpcomingEvents";
 import { Link } from 'react-router-dom';
 
-
 const Home = () => {
-    const {isAuthenticated, accountType, email, token} = useContext(Authcontext);
+    const { isAuthenticated, accountType, email, token } = useContext(Authcontext);
 
 
     return (
@@ -30,5 +29,6 @@ const Home = () => {
 };
 
 export default Home;
+
   
 

@@ -53,8 +53,8 @@ function App() {
                         <Route path="/event" element={<Events />} />
                         <Route path="/event/:event_id" element={<Events />} />
                         <Route path="/map" element={<LeafletMap />} />
-                        <Route path="/create-event" element={<CreateEvent />} /> 
-                        <Route path="/view-my-events" element={<ViewmyEvents />} /> 
+                        <Route path="/create-event" element={<CreateEvent />} />
+                        <Route path="/view-my-events" element={<ViewmyEvents />} />
                     </Routes>
 
                 </BrowserRouter>
@@ -63,4 +63,4 @@ function App() {
     );
 }
 
-export default App;
+export default App;

@@ -1,47 +1,39 @@
+/* CreateEvent.css */
 .create-event-container {
-    max-width: 500;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 h2 {
-    text-align: center;
-    position: relative;
+  text-align: center;
 }
+
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
+
+label {
+  margin-bottom: 8px;
+}
+
 input {
-    padding: 8px;
-    margin-bottom: 16px;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #db8d34;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 
 }
-input:hover,
-input:focus {
-  border-color: #af4c86; /* sau orice altă culoare pe care o preferi */
+
+button:hover {
+  background-color: #b98229;
 }
-button {
-    width: 200px;
-    padding: 15px;
-    background-color: #88238d;
-    color: white;
-    border: none;
-    cursor: pointer;
-    align-self: center;
-  }
-  
-  button:hover,
-  button:focus {
-    background-color: #45a049;
-  }
-  input {
-    display: inline-block;
-    padding: 10px;
-    background-color: #dae7f0; /* sau orice altă culoare pe care o preferi */
-    color: #030303; /* culoare text */
-    border-radius: 10px; /* valoarea border-radius controlează gradul de rotunjire a colțurilor */
-    margin-bottom: 10px;
-  }
-  
-  

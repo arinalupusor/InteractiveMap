@@ -18,8 +18,9 @@ const CreateEvent = () => {
     };
 
     const handleCreateEvent = () => {
+        // Implementează logica pentru a crea evenimentul
         console.log("Create event button clicked", eventDetails);
-        // Aici poți adăuga logica pentru a trimite detalii către API pentru a salva evenimentul
+        // Poți trimite detalii către API pentru a salva evenimentul
     };
 
     return (
