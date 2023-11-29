@@ -1,21 +1,30 @@
 import React, {useEffect, useMemo, useState} from "react";
 import StarRating from "./StarRating";
 import { FaTimes } from 'react-icons/fa';
+import {useNavigate} from "react-router-dom";
 const Event = ({selectedEvent, setSelectedEventId}) => {
-    const statusMessage = {
-        ended: "This event has ended!",
-        ongoing: "This event is ongoing!",
-        due: "This event will happen soon!"
-    }
-    const statusIcon = {
-        ended: "https://img.icons8.com/color/48/close-window.png",
-        ongoing: "https://img.icons8.com/color/48/close-window.png", //TODO - CHANGE THIS ICON
-        due: "https://img.icons8.com/color/48/close-window.png" //TODO - CHANGE THIS ICON
+    const statusObject = {
+        statusMessage : {
+            ended: "This event has ended!",
+            ongoing: "This event is ongoing!",
+            due: "This event will happen soon!"
+        },
+        statusIcon : {
+            ended: "https://img.icons8.com/color/48/close-window.png",
+            ongoing: "https://icons8.com/icon/115646/process",
+            due: "https://img.icons8.com/emoji/48/check-mark-emoji.png"
+        },
+        statusClassName : {
+            ended: "event-ended-message",
+            ongoing: "event-ongoing-message",
+            due: "event-due-message"
+        }
     }
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState('');
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [rating, setRating] = useState(0);
+    let navigate = useNavigate();
     const eventIntervals = useMemo(() => [
             'https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/228396ce-ac5e-48a3-7cca-af5d27145e00/source',
             'https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/6f56c511-01d6-4760-4b36-15ad9e733000/source',
@@ -63,6 +72,12 @@ const Event = ({selectedEvent, setSelectedEventId}) => {
     const handleRatingChange = (newRating) => {
         setRating(newRating);
     };
+
+    const onLocationClicked = () => {
+        console.log("clicked")
+        navigate("/home/" + selectedEvent.id)
+    }
+
     return (
        <div className="event-details-container">
            <button className="close-button" onClick={() => setSelectedEventId(null)}>
@@ -82,10 +97,10 @@ const Event = ({selectedEvent, setSelectedEventId}) => {
                    <img width="40" height="40" src="https://img.icons8.com/clouds/100/timer.png" alt="timer"/> <span className='icon-text'> Orele {selectedEvent.interval}</span>
                </div>
                <div className="icons-container2">
-                   <img width="40" height="40" src="https://img.icons8.com/clouds/100/map-pin.png" alt="map-pin" /> <span className='icon-text'>{selectedEvent.location}</span>
+                   <img width="40" height="40" src="https://img.icons8.com/clouds/100/map-pin.png" alt="map-pin" onClick={onLocationClicked}/> <span className='icon-text' onClick={onLocationClicked}>{selectedEvent.location}</span>
                </div>
-               <div className="event-ended-message">
-                   <img width="20" height="20" src={statusIcon[selectedEvent.status]} alt="close-window"/> <span className='icon-text'>{statusMessage[selectedEvent.status]}</span>
+               <div className={statusObject.statusClassName[selectedEvent.status]}>
+                   <img width="20" height="20" src={statusObject.statusIcon[selectedEvent.status]} alt="close-window"/> <span className='icon-text'>{statusObject.statusMessage[selectedEvent.status]}</span>
                </div>
                <div className="description-box">
                    <p>{selectedEvent.description}</p>

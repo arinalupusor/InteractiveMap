@@ -1,9 +1,18 @@
 package com.backend.root.app.Entities;
+import com.backend.root.app.DTOs.DisplayPinLocationDTO;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class PinLocation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -18,38 +27,10 @@ public class PinLocation {
     @Column(nullable = false)
     private double longitude;
 
+    @Column(nullable = false)
+    private boolean isPlace;
+
     @OneToMany(mappedBy = "pinLocation")
     private List<Place> places;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
 }

@@ -1,6 +1,7 @@
 package com.backend.root.app.DTOs;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 import lombok.NoArgsConstructor;
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class PlaceDisplayDTO {
     private Long id;
     private String name;
@@ -17,5 +19,6 @@ public class PlaceDisplayDTO {
     private String address;
     private String phoneNumber;
     private String email;
+    private Long pinId;
 
 }

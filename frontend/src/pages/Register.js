@@ -48,9 +48,6 @@ function Register() {
     const goToHomePage = () => {
         navigate("/");
     };
-    const goToLoginPage = () => {
-        navigate("/login");
-    };
     return (
         <div>
             <button className="go-back-button" onClick={goToHomePage}>

@@ -32,17 +32,6 @@ public class PlaceService {
         return place;
     }
 
-    public PlaceDTO convertToDTO(Place place) {
-        PlaceDTO placeDTO = new PlaceDTO();
-        placeDTO.setName(place.getName());
-        placeDTO.setDescription(place.getDescription());
-        placeDTO.setEmail(place.getEmail());
-        placeDTO.setBottomAttendance(place.getBottomAttendance());
-        placeDTO.setUpperAttendance(place.getUpperAttendance());
-        placeDTO.setAddress(place.getAddress());
-        placeDTO.setPhoneNumber(place.getPhoneNumber());
-        return placeDTO;
-    }
     public PlaceDisplayDTO convertToDTODisplay(Place place) {
         PlaceDisplayDTO placeDTO = new PlaceDisplayDTO();
         placeDTO.setId(place.getId());
@@ -53,36 +42,19 @@ public class PlaceService {
         placeDTO.setUpperAttendance(place.getUpperAttendance());
         placeDTO.setAddress(place.getAddress());
         placeDTO.setPhoneNumber(place.getPhoneNumber());
+        placeDTO.setPinId(place.getPinLocation().getId());
         return placeDTO;
     }
 
-    public Place save(Place place) {
-        return placeRepository.save(place);
-    }
-
-    public Place findById(Long id) {
-        return placeRepository.findById(id).orElseThrow(() -> new RuntimeException("Invalid place ID"));
-    }
-
-    public Place update(Place place, PlaceDTO placeDTO) {
-        place.setName(placeDTO.getName());
-        place.setDescription(placeDTO.getDescription());
-        return placeRepository.save(place);
-    }
-
-    public void deleteById(Long id) {
-        placeRepository.deleteById(id);
-    }
-
     public Place findPlaceByPinId(Long pinId) {
-        return placeRepository.findByPinLocationId(pinId)
-                .orElseThrow(() -> new RuntimeException("Place not found for given pin ID"));
+        return placeRepository.findByPinLocationId(pinId).orElse(null);
     }
     public Place savePlaceWithPin(PlaceDTO placeDTO, double latitude, double longitude) {
         PinLocation pinLocation = new PinLocation();
         pinLocation.setLatitude(latitude);
         pinLocation.setLongitude(longitude);
         pinLocation.setDescription(placeDTO.getName());
+        pinLocation.setPlace(true);
         pinLocation = pinLocationRepository.save(pinLocation);
         Place place = convertToEntity(placeDTO);
         place.setPinLocation(pinLocation);
@@ -93,6 +65,4 @@ public class PlaceService {
         List<Place> places = placeRepository.findByNameContainingIgnoreCase(name);
         return places.stream().map(this::convertToDTODisplay).collect(Collectors.toList());
     }
-
-
 }

@@ -2,19 +2,17 @@ package com.backend.root.app.DTOs;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.NoArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class CreateEventDTO {
-    private String name;
-    private String location;
+@Builder
+public class DisplayPinLocationDTO {
+    private Long id;
     private String description;
-    private String startTime;
-    private String endTime;
     private double latitude;
     private double longitude;
+    private boolean isPlace;
 }

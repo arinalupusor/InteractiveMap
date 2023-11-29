@@ -1,11 +1,10 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Link, useNavigate, useParams} from 'react-router-dom';
 import './StyleSheets/Event.css';
 import Event from "../components/Event";
 import Authcontext from "../components/AuthContext";
 import axios from "axios";
 import config from "../config.json";
-import {FaTimes} from "react-icons/fa";
 
 const Events = () => {
   let navigate = useNavigate();

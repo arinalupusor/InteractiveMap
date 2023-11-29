@@ -20,10 +20,10 @@ const Footer = () => {
                 </div>
             </div>
             <div className="middle-section">
-            <a href="https://your-privacy-policy-url.com" target="_blank" rel="noopener noreferrer">
+            <a href="/404" target="_blank" rel="noopener noreferrer">
                     <p>Privacy Policy</p>
                 </a>
-                <a href="https://your-terms-and-conditions-url.com" target="_blank" rel="noopener noreferrer">
+                <a href="/404" target="_blank" rel="noopener noreferrer">
                     <p>Terms and Conditions</p>
                 </a>
             </div>

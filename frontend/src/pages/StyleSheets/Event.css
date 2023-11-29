@@ -300,8 +300,6 @@ body {
   .icon-text {
     display: inline-block;
     vertical-align: middle;
-    margin-left: 10px;
-    margin:0;
   }
   
   .event-ended-message {
@@ -315,17 +313,28 @@ body {
     display: flex;
     align-items: center;
   }
-.event-message {
-  text-align: center;
-  color: rgb(81, 255, 0);
-  font-weight: bold;
-  margin: 15px;
-  top: 160px;
-  left: 625px;
-  position: absolute;
-  display: flex;
-  align-items: center;
-}
+  .event-due-message {
+    text-align: center;
+    color: rgb(81, 255, 0);
+    font-weight: bold;
+    margin: 15px;
+    top: 160px;
+    left: 625px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
+  .event-ongoing-message {
+    text-align: center;
+    color: rgb(255, 230, 0);
+    font-weight: bold;
+    margin: 15px;
+    top: 160px;
+    left: 625px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
 
 .description-box {
     position: absolute;

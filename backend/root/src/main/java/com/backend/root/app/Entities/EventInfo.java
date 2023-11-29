@@ -38,6 +38,10 @@ public class EventInfo {
     @Column(nullable = false)
     private LocalDateTime endTime;
 
+    @ManyToOne
+    @JoinColumn(name = "pin_location_id", nullable = false)
+    private PinLocation pinLocation;
+
     public DisplayEventDTO ToDisplayDto()
     {
         LocalDateTime currentTime = LocalDateTime.now();

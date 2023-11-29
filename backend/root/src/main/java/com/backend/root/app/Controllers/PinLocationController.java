@@ -1,5 +1,5 @@
 package com.backend.root.app.Controllers;
-import com.backend.root.app.DTOs.PinLocationDTO;
+import com.backend.root.app.DTOs.DisplayPinLocationDTO;
 import com.backend.root.app.DTOs.PlaceCreationDTO;
 import com.backend.root.app.DTOs.PlaceDisplayDTO;
 import com.backend.root.app.Entities.*;
@@ -25,18 +25,13 @@ public class PinLocationController {
     }
 
     @GetMapping
-    public Iterable<PinLocation> getAllPins() {
+    public Iterable<DisplayPinLocationDTO> getAllPins() {
         return pinLocationService.getAllPins();
     }
 
     @GetMapping("/{id}")
-    public PinLocation getPinById(@PathVariable Long id) {
+    public DisplayPinLocationDTO getPinById(@PathVariable Long id) {
         return pinLocationService.getPinById(id);
-    }
-
-    @PutMapping("/{id}")
-    public PinLocation updatePin(@PathVariable Long id, @RequestBody PinLocationDTO pinDTO) {
-        return pinLocationService.updatePin(id, pinDTO);
     }
 
     @PostMapping("/places")

@@ -1,9 +1,12 @@
 package com.backend.root.app.Services;
+import com.backend.root.app.DTOs.DisplayPinLocationDTO;
 import com.backend.root.app.Entities.PinLocation;
-import com.backend.root.app.DTOs.PinLocationDTO;
 import com.backend.root.app.Repositories.PinLocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PinLocationService {
@@ -14,32 +17,19 @@ public class PinLocationService {
         this.pinLocationRepository = pinLocationRepository;
     }
 
-    public Iterable<PinLocation> getAllPins() {
-        return pinLocationRepository.findAll();
+    public DisplayPinLocationDTO toDisplayDto(PinLocation location)
+    {
+        return DisplayPinLocationDTO.builder().isPlace(location.isPlace()).description(location.getDescription()).id(location.getId()).latitude(location.getLatitude()).longitude(location.getLongitude()).build();
     }
 
-    public PinLocation getPinById(Long id) {
-        return pinLocationRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid pin Id:" + id));
+    public Iterable<DisplayPinLocationDTO> getAllPins() {
+        List<PinLocation> pinLocations = (List<PinLocation>) pinLocationRepository.findAll();
+        return pinLocations.stream().map(this::toDisplayDto).collect(Collectors.toList());
     }
 
-    public PinLocation createPin(PinLocationDTO pinDTO) {
-        PinLocation pin = new PinLocation();
-        pin.setDescription(pinDTO.getDescription());
-        pin.setLatitude(pinDTO.getLatitude());
-        pin.setLongitude(pinDTO.getLongitude());
-        return pinLocationRepository.save(pin);
+    public DisplayPinLocationDTO getPinById(Long id) {
+        return toDisplayDto(pinLocationRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid pin Id:" + id)));
     }
 
-    public PinLocation updatePin(Long id, PinLocationDTO pinDTO) {
-        PinLocation pin = pinLocationRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid pin Id:" + id));
-        pin.setDescription(pinDTO.getDescription());
-        pin.setLatitude(pinDTO.getLatitude());
-        pin.setLongitude(pinDTO.getLongitude());
-        return pinLocationRepository.save(pin);
-    }
-
-    public void deletePin(Long id) {
-        pinLocationRepository.deleteById(id);
-    }
 }
 

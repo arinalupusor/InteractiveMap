@@ -43,11 +43,11 @@ const LeafletMap = () => {
         },
     ];
     const mapStyles = {
-        height: "500px",
+        height: "430px",
         width: "900px",
         position: "relative",
-        top: "25px",
-        left: "10px",
+        top: "45px",
+        left: "54px",
     };
     const mapPosition = [47.1585, 27.6014]; // Initial coordinates
     return (
