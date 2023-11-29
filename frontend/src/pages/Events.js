@@ -81,6 +81,12 @@ const Events = () => {
   };
 
   const handleSubmitFeedback = (event) => {
+    if(!isAuthenticated)
+    {
+      navigate("/login")
+      return;
+    }
+
     event.preventDefault();
     console.log('Feedback submitted:', feedback);
     setFeedback('');

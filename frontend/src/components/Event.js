@@ -1,8 +1,10 @@
-import React, {useEffect, useMemo, useState} from "react";
+import React, {useContext, useEffect, useMemo, useState} from "react";
 import StarRating from "./StarRating";
 import { FaTimes } from 'react-icons/fa';
 import {useNavigate} from "react-router-dom";
+import Authcontext from "./AuthContext";
 const Event = ({selectedEvent, setSelectedEventId}) => {
+    const {isAuthenticated, setIsAuthenticated, accountType} = useContext(Authcontext);
     const statusObject = {
         statusMessage : {
             ended: "This event has ended!",
@@ -47,6 +49,12 @@ const Event = ({selectedEvent, setSelectedEventId}) => {
     };
 
     const handleCommentSubmit = () => {
+        console.log("entered")
+        if(!isAuthenticated)
+        {
+            navigate("/login")
+            return;
+        }
         if (newComment.trim() !== '') {
             const updatedComments = [
                 ...comments,
@@ -74,8 +82,7 @@ const Event = ({selectedEvent, setSelectedEventId}) => {
     };
 
     const onLocationClicked = () => {
-        console.log("clicked")
-        navigate("/home/" + selectedEvent.id)
+        navigate("/home/" + selectedEvent.pinId)
     }
 
     return (

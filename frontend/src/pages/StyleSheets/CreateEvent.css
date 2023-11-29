@@ -21,7 +21,7 @@ label {
 }
 
 input {
-  padding: 8px;
+  padding: 3px;
   margin-bottom: 16px;
 }
 
@@ -36,4 +36,9 @@ button {
 
 button:hover {
   background-color: #b98229;
+}
+.errorLabel {
+  color:red;
+  text-align: center;
+
 }

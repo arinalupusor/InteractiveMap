@@ -7,6 +7,7 @@ import com.backend.root.app.Repositories.PlaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -62,7 +63,9 @@ public class PlaceService {
     }
 
     public List<PlaceDisplayDTO> searchPlacesByName(String name) {
+        if(name.isEmpty())
+            return new ArrayList<>();
         List<Place> places = placeRepository.findByNameContainingIgnoreCase(name);
-        return places.stream().map(this::convertToDTODisplay).collect(Collectors.toList());
+        return places.stream().map(this::convertToDTODisplay).limit(3).collect(Collectors.toList());
     }
 }

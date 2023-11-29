@@ -19,12 +19,12 @@ const Home = () => {
                 <UpcomingEvents />
 
                 <div className="button-container">
-                    <Link to="/create-event">
+                    {isAuthenticated && accountType === "EVENTOWNER" ? (<Link to="/create-event">
                     <button className="create-event-button">Create Event</button>
-                    </Link>
-                    <Link to="/view-my-events">
+                    </Link>): null}
+                    {isAuthenticated && accountType === "EVENTOWNER" ? (<Link to="/view-my-events">
                     <button className="view-my-events-button">View My Events</button>
-                    </Link>
+                    </Link>): null}
                 </div>
             </div>
             <Footer/>

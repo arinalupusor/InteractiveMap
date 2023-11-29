@@ -15,6 +15,6 @@ public class CreateEventDTO {
     private String description;
     private String startTime;
     private String endTime;
-    private double latitude;
     private double longitude;
+    private double latitude;
 }

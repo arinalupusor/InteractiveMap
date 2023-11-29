@@ -92,12 +92,6 @@ const UpcomingEvents = () => {
                     <p>Description:{selectedEvent.description} </p>
                 </div>
             )}
-            {accountType === "EVENTOWNER" && (
-                <div>
-                    <DatePicker onChange={handleDateChange} />
-                    <TimePicker onChange={handleTimeChange} />
-                </div>
-            )}
         </div>
     );
 };

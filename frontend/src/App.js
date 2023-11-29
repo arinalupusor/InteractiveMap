@@ -16,6 +16,7 @@ import ViewmyEvents from './pages/ViewmyEvents';
 import './pages/StyleSheets/CreateEvent.css';
 import './pages/StyleSheets/Viewmyevents.css';
 import NotFound from "./pages/NotFound";
+import ComingSoon from "./pages/ComingSoon";
 
 function App() {
     
@@ -52,12 +53,14 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/pinPage/:pin_id" element={<PinPage />} />
                         <Route path="/" element={<Home />} />
-                        <Route path="/home/:place_id" element={<Home />} />
+                        <Route path="/home/:pin_id" element={<Home />} />
                         <Route path="/event" element={<Events />} />
                         <Route path="/event/:event_id" element={<Events />} />
                         <Route path="/map" element={<LeafletMap />} />
                         <Route path="/create-event" element={accountType==="EVENTOWNER" ? <CreateEvent /> : <NotFound/>} />
                         <Route path="/view-my-events" element={accountType==="EVENTOWNER" ? <ViewmyEvents /> : <NotFound/>} />
+                        <Route path="/soon" element={<ComingSoon />} />
+
                         {/* 404 Not Found route */}
                         <Route path="*" element={<NotFound />} />
                     </Routes>

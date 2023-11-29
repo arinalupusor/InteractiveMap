@@ -62,6 +62,7 @@ public class EventInfo {
         dto.setName(getName());
         dto.setLocation(getLocation());
         dto.setDate(getStartTime().format(dateFormatter));
+        dto.setPinId(pinLocation.getId());
         return dto;
     }
 }

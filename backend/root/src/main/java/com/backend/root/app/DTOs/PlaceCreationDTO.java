@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PlaceCreationDTO {
     private PlaceDTO place;
-    private double latitude;
     private double longitude;
+    private double latitude;
 }

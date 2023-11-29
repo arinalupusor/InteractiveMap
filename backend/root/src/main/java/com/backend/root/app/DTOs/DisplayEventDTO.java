@@ -17,4 +17,5 @@ public class DisplayEventDTO {
     private String date;
     private String status;
     private String description;
+    private Long pinId;
 }

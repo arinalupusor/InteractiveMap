@@ -22,10 +22,10 @@ public class PinLocation {
     private String description;
 
     @Column(nullable = false)
-    private double latitude;
+    private double longitude;
 
     @Column(nullable = false)
-    private double longitude;
+    private double latitude;
 
     @Column(nullable = false)
     private boolean isPlace;
